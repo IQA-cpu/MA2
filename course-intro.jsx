@@ -13,7 +13,7 @@ const LIGHT = '#9fb0c0';
 
 const HEAD = "'Schibsted Grotesk', system-ui, sans-serif";
 const BODY = "'Public Sans', system-ui, sans-serif";
-const PHOTO = 'assets/lecturer-mean-udam.jpg';
+const PHOTO = 'lecturer-mean-udam.jpg';
 
 // Full-bleed background panel with an opacity crossfade (no scaling).
 function Bg({ color }) {
