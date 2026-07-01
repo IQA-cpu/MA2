@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Schibsted+Grotesk:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#f5f4ef;color:#3a4550;font-family:'Public Sans',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  ::selection{background:rgba(176,141,79,0.25);}
+  ul{margin:0;padding:0;}
+</style>
+</helmet>
+<div ref="{{ setRoot }}" style="--accent:#b08d4f;--accent-deep:#97743a;--accent-soft:#f3ead8;min-height:100vh;">
+
+  <!-- ============ NAV ============ -->
+  <header style="position:sticky;top:0;z-index:50;background:rgba(245,244,239,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #e4e0d6;">
+    <nav style="max-width:1180px;margin:0 auto;padding:13px clamp(18px,5vw,48px);display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;">
+      <a href="Management Accounting Hub.dc.html" style="display:flex;align-items:center;gap:11px;text-decoration:none;flex-shrink:0;">
+        <span style="background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-weight:700;font-size:13px;letter-spacing:.03em;padding:7px 10px;border-radius:7px;">ACCT 221</span>
+        <span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:16px;color:#16293f;letter-spacing:-0.01em;">Management Accounting 1</span>
+      </a>
+      <div style="display:flex;gap:4px;flex-wrap:wrap;align-items:center;">
+        <a data-nav="home" href="Management Accounting Hub.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">Home</a>
+        <a data-nav="syllabus" href="Syllabus.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">Syllabus</a>
+        <a data-nav="study" href="Study Hub.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">Study Hub</a>
+        <a data-nav="exercises" href="Exercises.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">Exercises</a>
+        <a data-nav="about" href="About Lecturer.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">Lecturer</a>
+        <a data-nav="active" href="Active Learning.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">Active Learning</a>
+        <a data-nav="chatbot" href="MA2 Chatbot.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">MA2 Chatbot</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============ HOME / HERO ============ -->
+  <section id="home" data-screen-label="Home" style="scroll-margin-top:74px;padding:clamp(54px,8vw,104px) 0 clamp(36px,5vw,60px);">
+    <div style="max-width:1180px;margin:0 auto;padding:0 clamp(18px,5vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,5vw,64px);align-items:center;">
+      <div>
+        <p style="margin:0 0 18px;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-deep);">SECOND YEAR</p>
+        <h1 style="margin:0 0 20px;font-family:'Schibsted Grotesk';font-weight:800;font-size:clamp(36px,6vw,62px);line-height:1.02;letter-spacing:-0.03em;color:#16293f;">Management<br>Accounting 1</h1>
+        <p style="margin:0 0 28px;font-size:clamp(16px,1.8vw,18.5px);line-height:1.7;color:#4a5560;max-width:36ch;">Costing and financing principles for recording, analysing and reporting costs and revenues — the techniques that support planning and decision-making across business contexts.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;">
+          <a href="Syllabus.dc.html" style="text-decoration:none;background:#16293f;color:#f5f4ef;font-weight:600;font-size:15px;padding:13px 22px;border-radius:10px;transition:all .15s;" style-hover="background:#0f1d2e;">View syllabus &amp; schedule</a>
+          <a href="Study Hub.dc.html" style="text-decoration:none;background:transparent;color:#16293f;font-weight:600;font-size:15px;padding:13px 22px;border-radius:10px;border:1px solid #d6d1c4;transition:all .15s;" style-hover="border-color:var(--accent);color:var(--accent-deep);">Open study hub</a>
+        </div>
+      </div>
+      <aside style="background:#fff;border:1px solid #e4e0d6;border-radius:18px;padding:clamp(24px,3vw,34px);box-shadow:0 24px 50px -28px rgba(22,41,63,0.28);">
+        <p style="margin:0 0 18px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8a8678;">QUICK INFORMATION</p>
+        <div style="display:flex;flex-direction:column;gap:0;">
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid #eceadf;">
+            <span style="color:#55606e;font-size:14.5px;">Instructor</span><span style="color:#16293f;font-weight:600;font-size:14.5px;text-align:right;">Mean Udam, MSc, ACCA</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid #eceadf;">
+            <span style="color:#55606e;font-size:14.5px;">Term</span><span style="color:#16293f;font-weight:600;font-size:14.5px;text-align:right;">July – December 2026</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid #eceadf;">
+            <span style="color:#55606e;font-size:14.5px;">Credits</span><span style="color:#16293f;font-weight:600;font-size:14.5px;text-align:right;">5</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid #eceadf;">
+            <span style="color:#55606e;font-size:14.5px;">Lecture hours</span><span style="color:#16293f;font-weight:600;font-size:14.5px;text-align:right;">75 hrs · 50 lessons</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:13px 0;">
+            <span style="color:#55606e;font-size:14.5px;">Reference text</span><span style="color:#16293f;font-weight:600;font-size:14.5px;text-align:right;">BPP / Kaplan MA2</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- quick nav -->
+    <div style="max-width:1180px;margin:clamp(40px,5vw,64px) auto 0;padding:0 clamp(18px,5vw,48px);">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;">
+        <a href="Syllabus.dc.html" style="text-decoration:none;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px;transition:all .18s;display:block;" style-hover="border-color:var(--accent);transform:translateY(-3px);box-shadow:0 18px 36px -24px rgba(22,41,63,0.4);">
+          <span style="display:block;font-family:'Schibsted Grotesk';font-weight:700;font-size:13px;color:var(--accent-deep);margin-bottom:10px;">01</span>
+          <span style="display:block;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;color:#16293f;margin-bottom:5px;">Syllabus &amp; Schedule</span>
+          <span style="display:block;font-size:13.5px;color:#6b7480;line-height:1.5;">Objectives, grading and the 50-lesson plan.</span>
+        </a>
+        <a href="Study Hub.dc.html" style="text-decoration:none;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px;transition:all .18s;display:block;" style-hover="border-color:var(--accent);transform:translateY(-3px);box-shadow:0 18px 36px -24px rgba(22,41,63,0.4);">
+          <span style="display:block;font-family:'Schibsted Grotesk';font-weight:700;font-size:13px;color:var(--accent-deep);margin-bottom:10px;">02</span>
+          <span style="display:block;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;color:#16293f;margin-bottom:5px;">Study Reference Hub</span>
+          <span style="display:block;font-size:13.5px;color:#6b7480;line-height:1.5;">Notes, key formulas and worked examples.</span>
+        </a>
+        <a href="Exercises.dc.html" style="text-decoration:none;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px;transition:all .18s;display:block;" style-hover="border-color:var(--accent);transform:translateY(-3px);box-shadow:0 18px 36px -24px rgba(22,41,63,0.4);">
+          <span style="display:block;font-family:'Schibsted Grotesk';font-weight:700;font-size:13px;color:var(--accent-deep);margin-bottom:10px;">03</span>
+          <span style="display:block;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;color:#16293f;margin-bottom:5px;">Exercises</span>
+          <span style="display:block;font-size:13.5px;color:#6b7480;line-height:1.5;">Chapter-by-chapter practice sets.</span>
+        </a>
+        <a href="MA2 Chatbot.dc.html" style="text-decoration:none;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px;transition:all .18s;display:block;" style-hover="border-color:var(--accent);transform:translateY(-3px);box-shadow:0 18px 36px -24px rgba(22,41,63,0.4);">
+          <span style="display:block;font-family:'Schibsted Grotesk';font-weight:700;font-size:13px;color:var(--accent-deep);margin-bottom:10px;">04</span>
+          <span style="display:block;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;color:#16293f;margin-bottom:5px;">MA2 Chatbot</span>
+          <span style="display:block;font-size:13.5px;color:#6b7480;line-height:1.5;">Ask questions about any lesson, anytime.</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WELCOME ============ -->
+  <section data-screen-label="Welcome" style="padding:0 0 clamp(8px,2vw,20px);">
+    <div style="max-width:1180px;margin:0 auto;padding:0 clamp(18px,5vw,48px);">
+      <div style="background:#fff;border:1px solid #e4e0d6;border-radius:18px;padding:clamp(26px,3.5vw,40px);display:grid;grid-template-columns:auto 1fr;gap:clamp(22px,3vw,36px);align-items:center;">
+        <div style="flex-shrink:0;width:clamp(96px,13vw,140px);">
+          <div style="aspect-ratio:1;border-radius:16px;overflow:hidden;background:#e9eef2;border:1px solid #e4e0d6;">
+            <img src="assets/lecturer-mean-udam.jpg" alt="Mean Udam" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" />
+          </div>
+        </div>
+        <div>
+          <p style="margin:0 0 12px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-deep);">A welcome from your lecturer</p>
+          <p style="margin:0 0 14px;font-size:clamp(16px,1.7vw,18.5px);line-height:1.7;color:#3a4550;">Welcome to Management Accounting 1. I'm <strong style="color:#16293f;">Mean Udam</strong>, and it's a pleasure to be your lecturer this term. Over the coming weeks we'll work through costing, budgeting and decision-making — the practical tools that turn numbers into better business decisions. Come curious, ask questions, and make full use of the notes, tools and practice quizzes on this site.</p>
+          <p style="margin:0 0 18px;font-size:clamp(16px,1.7vw,18.5px);line-height:1.7;color:#3a4550;">My door is always open — if anything is unclear, book a consultation and we'll work through it together. I'm looking forward to a great term with you.</p>
+          <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+            <span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:17px;color:#16293f;">Mean Udam</span>
+            <span style="width:5px;height:5px;border-radius:50%;background:#c2bdae;"></span>
+            <span style="font-size:14px;color:#6b7480;">MSc · ACCA · Lecturer</span>
+            <a href="About Lecturer.dc.html" style="margin-left:auto;text-decoration:none;color:var(--accent-deep);font-weight:600;font-size:14.5px;" style-hover="text-decoration:underline;">About the lecturer →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COURSE INTRO VIDEO ============ -->
+  <section data-screen-label="Course intro" style="padding:clamp(20px,3vw,32px) 0 clamp(8px,2vw,16px);">
+    <div style="max-width:1180px;margin:0 auto;padding:0 clamp(18px,5vw,48px);">
+      <p style="margin:0 0 14px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-deep);">Course intro · 40 seconds</p>
+      <div style="position:relative;width:100%;aspect-ratio:16 / 9;border-radius:16px;overflow:hidden;border:1px solid #e4e0d6;background:#16293f;">
+        <x-import component-from-global-scope="CourseIntro" from="./animations.jsx ./course-intro.jsx" hint-size="100%,100%"></x-import>
+      </div>
+      <p style="margin:14px 0 0;font-size:13.5px;color:#6b7480;line-height:1.6;">Press play to watch a short introduction to Management Accounting 1. (Silent — add your own voiceover or music later.)</p>
+    </div>
+  </section>
+
+  <!-- stat band -->
+  <div data-statband="" style="background:#16293f;">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(28px,4vw,44px) clamp(18px,5vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:24px;">
+      <div><div style="font-family:'Schibsted Grotesk';font-weight:800;font-size:clamp(28px,3.4vw,38px);color:#f5f4ef;line-height:1;">5</div><div style="margin-top:7px;font-size:13px;color:#9fb0c0;letter-spacing:.03em;">Topic parts</div></div>
+      <div><div style="font-family:'Schibsted Grotesk';font-weight:800;font-size:clamp(28px,3.4vw,38px);color:#f5f4ef;line-height:1;">50</div><div style="margin-top:7px;font-size:13px;color:#9fb0c0;letter-spacing:.03em;">Lessons</div></div>
+      <div><div style="font-family:'Schibsted Grotesk';font-weight:800;font-size:clamp(28px,3.4vw,38px);color:var(--accent);line-height:1;">75</div><div style="margin-top:7px;font-size:13px;color:#9fb0c0;letter-spacing:.03em;">Lecture hours</div></div>
+      <div><div style="font-family:'Schibsted Grotesk';font-weight:800;font-size:clamp(28px,3.4vw,38px);color:#f5f4ef;line-height:1;">225</div><div style="margin-top:7px;font-size:13px;color:#9fb0c0;letter-spacing:.03em;">Total study hours</div></div>
+      <div><div style="font-family:'Schibsted Grotesk';font-weight:800;font-size:clamp(28px,3.4vw,38px);color:#f5f4ef;line-height:1;">7</div><div style="margin-top:7px;font-size:13px;color:#9fb0c0;letter-spacing:.03em;">Learning outcomes</div></div>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:#16293f;color:#cdd5dd;">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(44px,6vw,68px) clamp(18px,5vw,48px) 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:36px;">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;"><span style="background:var(--accent);color:#16293f;font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;padding:6px 9px;border-radius:6px;">ACCT 221</span><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:15px;color:#f5f4ef;">Management Accounting 1</span></div>
+        <p style="margin:0;font-size:13.5px;line-height:1.6;color:#9fb0c0;max-width:34ch;">Second-year Foundations in Accountancy. Costing, decision-making and cash management for internal reporting.</p>
+      </div>
+      <div>
+        <p style="margin:0 0 14px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#7e90a2;">Navigate</p>
+        <div style="display:grid;gap:9px;">
+          <a href="Management Accounting Hub.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">Home</a>
+          <a href="Syllabus.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">Syllabus &amp; Schedule</a>
+          <a href="Study Hub.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">Study Reference Hub</a>
+          <a href="Exercises.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">Exercises</a>
+          <a href="About Lecturer.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">About the Lecturer</a>
+          <a href="Active Learning.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">Active Learning</a>
+          <a href="MA2 Chatbot.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">MA2 Chatbot</a>
+        </div>
+      </div>
+      <div>
+        <p style="margin:0 0 14px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#7e90a2;">Contact</p>
+        <div style="display:grid;gap:9px;font-size:14px;line-height:1.5;">
+          <span style="color:#f5f4ef;font-weight:600;">Mean Udam, MSc, ACCA</span>
+          <a href="mailto:mudam@cam-ed.com" style="text-decoration:none;color:var(--accent);font-weight:600;transition:color .15s;" style-hover="color:#c79e5b;">mudam@cam-ed.com</a>
+          <span style="color:#9fb0c0;">CamEd Business School</span>
+          <span style="color:#9fb0c0;">Term: July – December 2026</span>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.1);">
+      <div style="max-width:1180px;margin:0 auto;padding:18px clamp(18px,5vw,48px);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:12.5px;color:#7e90a2;">
+        <span>© 2026 Management Accounting 1 · ACCT 221</span>
+        <span>Course hub · syllabus · study reference · exercises</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#b08d4f&quot;,&quot;options&quot;:[&quot;#b08d4f&quot;,&quot;#1f7a6d&quot;,&quot;#8c2f39&quot;,&quot;#3a6ea5&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Appearance&quot;},&quot;showStats&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+class Component extends DCLogic {
+  state = {
+    activeTool: 'cvp',
+    activeSection: 'home',
+    cvpFC: '12000', cvpSP: '50', cvpVC: '30', cvpTarget: '8000',
+    hlHighU: '1100', hlHighC: '18500', hlLowU: '600', hlLowC: '12000',
+    eoqD: '24000', eoqCo: '30', eoqCh: '2.5',
+    vStdQ: '2', vStdP: '5', vActU: '1000', vActQ: '2100', vActP: '4.8',
+    quizAnswers: {}
+  };
+
+  QUESTIONS = [
+    { q: 'Contribution per unit is calculated as:', options: ['Selling price − variable cost per unit', 'Selling price − fixed cost per unit', 'Sales − total cost', 'Fixed cost ÷ units sold'], correct: 0, explanation: 'Contribution = selling price − variable cost per unit. It covers fixed costs first, then forms profit.' },
+    { q: 'The break-even point in units equals:', options: ['Fixed costs ÷ contribution per unit', 'Fixed costs ÷ selling price', 'Contribution ÷ fixed costs', 'Variable cost ÷ contribution'], correct: 0, explanation: 'At break-even, total contribution exactly covers fixed costs, so units = fixed costs ÷ contribution per unit.' },
+    { q: 'The high-low method is used to:', options: ['Separate the fixed and variable elements of a mixed cost', 'Value closing inventory', 'Calculate the economic order quantity', 'Apportion overheads to cost centres'], correct: 0, explanation: 'High-low uses the highest and lowest activity levels to estimate variable cost per unit and the fixed element.' },
+    { q: 'A material price variance is favourable when:', options: ['The actual price paid is lower than the standard price', 'More material is used than standard', 'Actual output exceeds budget', 'The standard price rises'], correct: 0, explanation: 'Paying less than standard gives a favourable price variance: (SP − AP) × actual quantity.' },
+    { q: 'The economic order quantity (EOQ) minimises:', options: ['Total ordering and holding costs', 'The purchase price of materials', 'The reorder level', 'Total annual demand'], correct: 0, explanation: 'EOQ = √(2·Co·D ÷ Ch) is the order size where ordering cost and holding cost are minimised in total.' },
+    { q: 'Margin of safety measures:', options: ['How far sales can fall before reaching break-even', 'Total contribution earned', 'The profit at break-even', 'Fixed costs as a % of sales'], correct: 0, explanation: 'Margin of safety is the excess of budgeted (or actual) sales over the break-even level — the cushion before losses.' }
+  ];
+
+  componentDidMount() {
+    this.applyTweaks();
+    this.paintTabs();
+    this.paintNav();
+    const ids = ['home', 'syllabus', 'study', 'tools', 'portfolio'];
+    this.io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) this.setState({ activeSection: e.target.id });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    if (this.rootEl) ids.forEach((id) => { const el = this.rootEl.querySelector('#' + id); if (el) this.io.observe(el); });
+  }
+
+  componentDidUpdate() {
+    this.applyTweaks();
+    this.paintTabs();
+    this.paintNav();
+  }
+
+  componentWillUnmount() { if (this.io) this.io.disconnect(); }
+
+  applyTweaks() {
+    if (!this.rootEl) return;
+    const accent = this.props.accent || '#b08d4f';
+    this.rootEl.style.setProperty('--accent', accent);
+    const showW = this.props.showWorkedExamples !== false;
+    this.rootEl.querySelectorAll('[data-worked]').forEach((el) => { el.style.display = showW ? '' : 'none'; });
+    const showS = this.props.showStats !== false;
+    this.rootEl.querySelectorAll('[data-statband]').forEach((el) => { el.style.display = showS ? '' : 'none'; });
+  }
+
+  paintTabs() {
+    if (!this.rootEl) return;
+    this.rootEl.querySelectorAll('[data-tool-tab]').forEach((t) => {
+      const active = t.getAttribute('data-tool-tab') === this.state.activeTool;
+      t.style.background = active ? '#16293f' : 'transparent';
+      t.style.color = active ? '#f5f4ef' : '#3a4550';
+      t.style.borderColor = active ? '#16293f' : '#d6d1c4';
+    });
+  }
+
+  paintNav() {
+    if (!this.rootEl) return;
+    this.rootEl.querySelectorAll('[data-nav]').forEach((a) => {
+      const active = a.getAttribute('data-nav') === this.state.activeSection;
+      a.style.color = active ? 'var(--accent-deep)' : '#3a4550';
+      a.style.background = active ? 'rgba(176,141,79,0.12)' : 'transparent';
+    });
+  }
+
+  field(key) { return (e) => this.setState({ [key]: e.target.value }); }
+
+  pickAnswer(qi, oi) {
+    if (this.state.quizAnswers[qi] !== undefined) return;
+    this.setState((s) => ({ quizAnswers: { ...s.quizAnswers, [qi]: oi } }));
+  }
+
+  renderVals() {
+    const S = this.state;
+    const num = (v) => { const n = parseFloat(v); return isFinite(n) ? n : 0; };
+    const money = (n) => isFinite(n) ? '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '—';
+    const pct = (n) => isFinite(n) ? (n * 100).toFixed(1) + '%' : '—';
+    const round2 = (n) => Math.round(n * 100) / 100;
+
+    // CVP
+    const fc = num(S.cvpFC), sp = num(S.cvpSP), vc = num(S.cvpVC), tp = num(S.cvpTarget);
+    const contrib = sp - vc;
+    const csRatio = sp ? contrib / sp : NaN;
+    const bepU = contrib ? fc / contrib : NaN;
+    const bepR = csRatio ? fc / csRatio : NaN;
+    const tgtU = contrib ? (fc + tp) / contrib : NaN;
+
+    // High-Low
+    const hu = num(S.hlHighU), hc = num(S.hlHighC), lu = num(S.hlLowU), lc = num(S.hlLowC);
+    const vcu = (hu - lu) ? (hc - lc) / (hu - lu) : NaN;
+    const fc2 = isFinite(vcu) ? hc - vcu * hu : NaN;
+
+    // EOQ
+    const d = num(S.eoqD), co = num(S.eoqCo), ch = num(S.eoqCh);
+    const eoq = ch > 0 ? Math.sqrt(2 * d * co / ch) : NaN;
+    const orders = eoq ? d / eoq : NaN;
+    const totalCost = isFinite(eoq) ? orders * co + (eoq / 2) * ch : NaN;
+
+    // Variance
+    const sq = num(S.vStdQ) * num(S.vActU);
+    const aq = num(S.vActQ), spr = num(S.vStdP), apr = num(S.vActP);
+    const priceVar = (spr - apr) * aq;
+    const usageVar = (sq - aq) * spr;
+    const totalVar = priceVar + usageVar;
+    const fmtVar = (v) => isFinite(v) ? '$' + Math.abs(round2(v)).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + (v >= 0 ? ' F' : ' A') : '—';
+    const varStyle = (v) => 'font-family:\'Schibsted Grotesk\';font-weight:700;font-size:19px;color:' + (v >= 0 ? '#6fd39a' : '#f0a3a3');
+
+    // Quiz
+    const baseOpt = 'display:flex;justify-content:space-between;gap:12px;align-items:center;text-align:left;width:100%;padding:13px 16px;border:1px solid #d6d1c4;border-radius:10px;background:#fff;color:#16293f;font-size:14.5px;font-weight:500;cursor:pointer;font-family:\'Public Sans\';transition:all .15s;';
+    const correctOpt = 'display:flex;justify-content:space-between;gap:12px;align-items:center;text-align:left;width:100%;padding:13px 16px;border:1.5px solid #1f7a55;border-radius:10px;background:#e9f5ee;color:#155c3f;font-size:14.5px;font-weight:600;cursor:default;font-family:\'Public Sans\';';
+    const wrongOpt = 'display:flex;justify-content:space-between;gap:12px;align-items:center;text-align:left;width:100%;padding:13px 16px;border:1.5px solid #c0504d;border-radius:10px;background:#fbecec;color:#8c2f2f;font-size:14.5px;font-weight:600;cursor:default;font-family:\'Public Sans\';';
+    const dimOpt = 'display:flex;justify-content:space-between;gap:12px;align-items:center;text-align:left;width:100%;padding:13px 16px;border:1px solid #ece9df;border-radius:10px;background:#faf9f5;color:#8a8678;font-size:14.5px;font-weight:500;cursor:default;font-family:\'Public Sans\';';
+
+    let correctCount = 0;
+    const quizList = this.QUESTIONS.map((q, qi) => {
+      const picked = S.quizAnswers[qi];
+      const answered = picked !== undefined;
+      if (answered && picked === q.correct) correctCount++;
+      const options = q.options.map((text, oi) => {
+        let style = baseOpt;
+        let mark = '';
+        if (answered) {
+          if (oi === q.correct) { style = correctOpt; mark = '✓'; }
+          else if (oi === picked) { style = wrongOpt; mark = '✕'; }
+          else { style = dimOpt; }
+        }
+        return { text, style, mark, onClick: () => this.pickAnswer(qi, oi) };
+      });
+      return {
+        label: 'Q' + (qi + 1) + '. ' + q.q,
+        options, answered,
+        explanation: q.explanation,
+        explStyle: 'margin:14px 0 0;padding:12px 14px;background:var(--accent-soft);border-radius:9px;font-size:13.5px;line-height:1.55;color:#5a4a2e;'
+      };
+    });
+    const answeredCount = Object.keys(S.quizAnswers).length;
+
+    return {
+      setRoot: (el) => { this.rootEl = el; },
+      isCvp: S.activeTool === 'cvp',
+      isHighLow: S.activeTool === 'highlow',
+      isEoq: S.activeTool === 'eoq',
+      isVar: S.activeTool === 'variance',
+      isQuiz: S.activeTool === 'quiz',
+      pick_cvp: () => this.setState({ activeTool: 'cvp' }),
+      pick_hl: () => this.setState({ activeTool: 'highlow' }),
+      pick_eoq: () => this.setState({ activeTool: 'eoq' }),
+      pick_var: () => this.setState({ activeTool: 'variance' }),
+      pick_quiz: () => this.setState({ activeTool: 'quiz' }),
+
+      cvpFC: S.cvpFC, cvpSP: S.cvpSP, cvpVC: S.cvpVC, cvpTarget: S.cvpTarget,
+      on_cvpFC: this.field('cvpFC'), on_cvpSP: this.field('cvpSP'), on_cvpVC: this.field('cvpVC'), on_cvpTarget: this.field('cvpTarget'),
+      cvpContrib: money(contrib),
+      cvpCsRatio: pct(csRatio),
+      cvpBepUnits: isFinite(bepU) && bepU >= 0 ? Math.ceil(bepU).toLocaleString() + ' units' : '—',
+      cvpBepRev: money(bepR),
+      cvpTargetUnits: isFinite(tgtU) && tgtU >= 0 ? Math.ceil(tgtU).toLocaleString() + ' units' : '—',
+
+      hlHighU: S.hlHighU, hlHighC: S.hlHighC, hlLowU: S.hlLowU, hlLowC: S.hlLowC,
+      on_hlHighU: this.field('hlHighU'), on_hlHighC: this.field('hlHighC'), on_hlLowU: this.field('hlLowU'), on_hlLowC: this.field('hlLowC'),
+      hlVc: isFinite(vcu) ? '$' + round2(vcu).toLocaleString('en-US', { maximumFractionDigits: 2 }) + ' / unit' : '—',
+      hlFc: money(fc2),
+      hlEq: (isFinite(vcu) && isFinite(fc2)) ? 'y = ' + money(fc2) + ' + $' + round2(vcu) + 'x' : '—',
+
+      eoqD: S.eoqD, eoqCo: S.eoqCo, eoqCh: S.eoqCh,
+      on_eoqD: this.field('eoqD'), on_eoqCo: this.field('eoqCo'), on_eoqCh: this.field('eoqCh'),
+      eoqVal: isFinite(eoq) ? Math.round(eoq).toLocaleString() + ' units' : '—',
+      eoqOrders: isFinite(orders) ? orders.toFixed(1) + ' / year' : '—',
+      eoqTotalCost: money(totalCost),
+
+      vStdQ: S.vStdQ, vStdP: S.vStdP, vActU: S.vActU, vActQ: S.vActQ, vActP: S.vActP,
+      on_vStdQ: this.field('vStdQ'), on_vStdP: this.field('vStdP'), on_vActU: this.field('vActU'), on_vActQ: this.field('vActQ'), on_vActP: this.field('vActP'),
+      vSQ: isFinite(sq) ? sq.toLocaleString() + ' kg' : '—',
+      vPriceTxt: fmtVar(priceVar), vPriceStyle: varStyle(priceVar),
+      vUsageTxt: fmtVar(usageVar), vUsageStyle: varStyle(usageVar),
+      vTotalTxt: fmtVar(totalVar), vTotalStyle: varStyle(totalVar),
+
+      quizList,
+      scoreText: correctCount + ' / ' + this.QUESTIONS.length,
+      resetQuiz: () => this.setState({ quizAnswers: {} })
+    };
+  }
+}
+</script>
+</body>
+</html>

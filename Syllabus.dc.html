@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Schibsted+Grotesk:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#f5f4ef;color:#3a4550;font-family:'Public Sans',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  ::selection{background:rgba(176,141,79,0.25);}
+  ul{margin:0;padding:0;}
+</style>
+</helmet>
+<div ref="{{ setRoot }}" style="--accent:#b08d4f;--accent-deep:#97743a;--accent-soft:#f3ead8;min-height:100vh;">
+
+  <!-- ============ NAV ============ -->
+  <header style="position:sticky;top:0;z-index:50;background:rgba(245,244,239,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #e4e0d6;">
+    <nav style="max-width:1180px;margin:0 auto;padding:13px clamp(18px,5vw,48px);display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;">
+      <a href="Management Accounting Hub.dc.html" style="display:flex;align-items:center;gap:11px;text-decoration:none;flex-shrink:0;">
+        <span style="background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-weight:700;font-size:13px;letter-spacing:.03em;padding:7px 10px;border-radius:7px;">ACCT 221</span>
+        <span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:16px;color:#16293f;letter-spacing:-0.01em;">Management Accounting 1</span>
+      </a>
+      <div style="display:flex;gap:4px;flex-wrap:wrap;align-items:center;">
+        <a data-nav="home" href="Management Accounting Hub.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">Home</a>
+        <a data-nav="syllabus" href="Syllabus.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">Syllabus</a>
+        <a data-nav="study" href="Study Hub.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">Study Hub</a>
+        <a data-nav="exercises" href="Exercises.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">Exercises</a>
+        <a data-nav="about" href="About Lecturer.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">Lecturer</a>
+        <a data-nav="active" href="Active Learning.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">Active Learning</a>
+        <a data-nav="chatbot" href="MA2 Chatbot.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">MA2 Chatbot</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============ SYLLABUS ============ -->
+  <section id="syllabus" data-screen-label="Syllabus" style="scroll-margin-top:74px;padding:clamp(56px,8vw,100px) 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 clamp(18px,5vw,48px);">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:clamp(32px,4vw,48px);">
+        <div>
+          <p style="margin:0 0 12px;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-deep);">Section 01</p>
+          <h2 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:clamp(28px,4vw,44px);letter-spacing:-0.02em;color:#16293f;">Syllabus &amp; Schedule</h2>
+        </div>
+        <a href="https://drive.google.com/file/d/1WEy9E6JzIzRs-lEuzcTQ0uKWaXdfVr1h/view?usp=drive_link" target="_blank" rel="noopener" style="text-decoration:none;font-size:14px;font-weight:600;color:#16293f;border:1px solid #d6d1c4;border-radius:9px;padding:10px 16px;transition:all .15s;white-space:nowrap;" style-hover="border-color:var(--accent);color:var(--accent-deep);">↓ Full specification (PDF)</a>
+      </div>
+
+      <!-- Objectives -->
+      <h3 style="margin:0 0 18px;font-family:'Schibsted Grotesk';font-weight:700;font-size:22px;color:#16293f;">Course learning outcomes</h3>
+      <p style="margin:0 0 22px;max-width:62ch;font-size:16px;line-height:1.7;color:#4a5560;">On successful completion, students will be able to:</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-bottom:clamp(48px,6vw,72px);">
+        <div style="background:#fff;border:1px solid #e4e0d6;border-radius:13px;padding:20px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;letter-spacing:.05em;color:var(--accent-deep);background:var(--accent-soft);padding:4px 8px;border-radius:6px;">CK1</span><span style="font-size:11.5px;font-weight:600;color:#8a8678;text-transform:uppercase;letter-spacing:.06em;">Understand</span></div>
+          <p style="margin:0;font-size:14.5px;line-height:1.55;color:#3a4550;">Describe the role of management information and the use of IT within the organisation.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #e4e0d6;border-radius:13px;padding:20px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;letter-spacing:.05em;color:var(--accent-deep);background:var(--accent-soft);padding:4px 8px;border-radius:6px;">CK2</span><span style="font-size:11.5px;font-weight:600;color:#8a8678;text-transform:uppercase;letter-spacing:.06em;">Understand</span></div>
+          <p style="margin:0;font-size:14.5px;line-height:1.55;color:#3a4550;">Identify investment opportunities and different ways of raising finance from the bank.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #e4e0d6;border-radius:13px;padding:20px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;letter-spacing:.05em;color:var(--accent-deep);background:var(--accent-soft);padding:4px 8px;border-radius:6px;">CC1</span><span style="font-size:11.5px;font-weight:600;color:#8a8678;text-transform:uppercase;letter-spacing:.06em;">Apply</span></div>
+          <p style="margin:0;font-size:14.5px;line-height:1.55;color:#3a4550;">Prepare basic cost information by applying different cost accounting techniques.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #e4e0d6;border-radius:13px;padding:20px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;letter-spacing:.05em;color:var(--accent-deep);background:var(--accent-soft);padding:4px 8px;border-radius:6px;">CC2</span><span style="font-size:11.5px;font-weight:600;color:#8a8678;text-transform:uppercase;letter-spacing:.06em;">Apply</span></div>
+          <p style="margin:0;font-size:14.5px;line-height:1.55;color:#3a4550;">Apply principles of cash management and prepare cash budgets / cash flow forecasts.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #e4e0d6;border-radius:13px;padding:20px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;letter-spacing:.05em;color:var(--accent-deep);background:var(--accent-soft);padding:4px 8px;border-radius:6px;">CCIT1</span><span style="font-size:11.5px;font-weight:600;color:#8a8678;text-transform:uppercase;letter-spacing:.06em;">Apply</span></div>
+          <p style="margin:0;font-size:14.5px;line-height:1.55;color:#3a4550;">Determine the cost of materials, labour and other expenses.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #e4e0d6;border-radius:13px;padding:20px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;letter-spacing:.05em;color:var(--accent-deep);background:var(--accent-soft);padding:4px 8px;border-radius:6px;">CCIT2</span><span style="font-size:11.5px;font-weight:600;color:#8a8678;text-transform:uppercase;letter-spacing:.06em;">Apply</span></div>
+          <p style="margin:0;font-size:14.5px;line-height:1.55;color:#3a4550;">Solve make/buy-in and investment decisions using payback, NPV and IRR.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #e4e0d6;border-radius:13px;padding:20px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;letter-spacing:.05em;color:var(--accent-deep);background:var(--accent-soft);padding:4px 8px;border-radius:6px;">CIP1</span><span style="font-size:11.5px;font-weight:600;color:#8a8678;text-transform:uppercase;letter-spacing:.06em;">Respond</span></div>
+          <p style="margin:0;font-size:14.5px;line-height:1.55;color:#3a4550;">Work in a team to evaluate information from different sources for planning, control and decision-making.</p>
+        </div>
+      </div>
+
+      <!-- Grading -->
+      <h3 style="margin:0 0 22px;font-family:'Schibsted Grotesk';font-weight:700;font-size:22px;color:#16293f;">Grading breakdown</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(28px,4vw,48px);align-items:center;margin-bottom:clamp(48px,6vw,72px);">
+        <div style="display:flex;justify-content:center;">
+          <div style="position:relative;width:210px;height:210px;border-radius:50%;background:conic-gradient(#5b6b7d 0 10%,#1e3a5f 10% 30%,var(--accent) 30% 50%,#16293f 50% 70%,var(--accent-deep) 70% 100%);">
+            <div style="position:absolute;inset:54px;background:#f5f4ef;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+              <span style="font-family:'Schibsted Grotesk';font-weight:800;font-size:30px;color:#16293f;">100%</span>
+              <span style="font-size:12px;color:#8a8678;letter-spacing:.04em;">course grade</span>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:2px;">
+          <div style="display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid #eceadf;"><span style="width:13px;height:13px;border-radius:4px;background:#5b6b7d;flex-shrink:0;"></span><span style="flex:1;font-weight:600;color:#16293f;font-size:15px;">Participation</span><span style="font-family:'Schibsted Grotesk';font-weight:700;color:#16293f;">10%</span></div>
+          <div style="display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid #eceadf;"><span style="width:13px;height:13px;border-radius:4px;background:#1e3a5f;flex-shrink:0;"></span><span style="flex:1;font-weight:600;color:#16293f;font-size:15px;">Class tests &amp; quizzes</span><span style="font-family:'Schibsted Grotesk';font-weight:700;color:#16293f;">20%</span></div>
+          <div style="display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid #eceadf;"><span style="width:13px;height:13px;border-radius:4px;background:var(--accent);flex-shrink:0;"></span><span style="flex:1;font-weight:600;color:#16293f;font-size:15px;">Group project</span><span style="font-family:'Schibsted Grotesk';font-weight:700;color:#16293f;">30%</span></div>
+          <div style="display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid #eceadf;"><span style="width:13px;height:13px;border-radius:4px;background:#16293f;flex-shrink:0;"></span><span style="flex:1;font-weight:600;color:#16293f;font-size:15px;">Midterm exam</span><span style="font-family:'Schibsted Grotesk';font-weight:700;color:#16293f;">20%</span></div>
+          <div style="display:flex;align-items:center;gap:12px;padding:11px 0;"><span style="width:13px;height:13px;border-radius:4px;background:var(--accent-deep);flex-shrink:0;"></span><span style="flex:1;font-weight:600;color:#16293f;font-size:15px;">Final exam</span><span style="font-family:'Schibsted Grotesk';font-weight:700;color:#16293f;">20%</span></div>
+          <p style="margin:12px 0 0;font-size:12.5px;color:#8a8678;line-height:1.5;">Indicative weighting. Final grades are allocated across learning outcomes per the official course specification.</p>
+        </div>
+      </div>
+
+      <!-- Schedule -->
+      <h3 style="margin:0 0 22px;font-family:'Schibsted Grotesk';font-weight:700;font-size:22px;color:#16293f;">Main Topics</h3>
+      <div style="display:grid;gap:16px;margin-bottom:clamp(48px,6vw,72px);">
+
+        <article style="background:#fff;border:1px solid #e4e0d6;border-left:4px solid var(--accent);border-radius:14px;padding:clamp(20px,3vw,28px);">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:14px;">
+            <span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;letter-spacing:.04em;color:#fff;background:#16293f;padding:5px 10px;border-radius:7px;">PART 1</span>
+            <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:19px;color:#16293f;flex:1;min-width:180px;">Management Information</h4>
+            <span style="font-size:12.5px;font-weight:600;color:#8a8678;">Lessons 1–3 · 7–11</span>
+          </div>
+          <ul style="display:grid;gap:0;">
+            <li style="list-style:none;display:flex;gap:14px;align-items:baseline;padding:9px 0;border-top:1px solid #f0eee5;"><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;color:var(--accent-deep);min-width:46px;">L1–3</span><span style="font-size:14.5px;color:#3a4550;line-height:1.5;">Purpose, qualities and sources of management information; coding systems; role of information technology.</span></li>
+            <li style="list-style:none;display:flex;gap:14px;align-items:baseline;padding:9px 0;border-top:1px solid #f0eee5;"><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;color:var(--accent-deep);min-width:46px;">L7–9</span><span style="font-size:14.5px;color:#3a4550;line-height:1.5;">Information for comparisons; budgeting and flexible budgets; sales and cost variances (favourable / adverse).</span></li>
+            <li style="list-style:none;display:flex;gap:14px;align-items:baseline;padding:9px 0;border-top:1px solid #f0eee5;"><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;color:var(--accent-deep);min-width:46px;">L10–11</span><span style="font-size:14.5px;color:#3a4550;line-height:1.5;">Reporting management information: formats, communication methods and distribution principles.</span></li>
+          </ul>
+        </article>
+
+        <article style="background:#fff;border:1px solid #e4e0d6;border-left:4px solid var(--accent);border-radius:14px;padding:clamp(20px,3vw,28px);">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:14px;">
+            <span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;letter-spacing:.04em;color:#fff;background:#16293f;padding:5px 10px;border-radius:7px;">PART 2</span>
+            <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:19px;color:#16293f;flex:1;min-width:180px;">Cost Recording</h4>
+            <span style="font-size:12.5px;font-weight:600;color:#8a8678;">Lessons 4–6 · 12–20</span>
+          </div>
+          <ul style="display:grid;gap:0;">
+            <li style="list-style:none;display:flex;gap:14px;align-items:baseline;padding:9px 0;border-top:1px solid #f0eee5;"><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;color:var(--accent-deep);min-width:46px;">L4–6</span><span style="font-size:14.5px;color:#3a4550;line-height:1.5;">Cost classification; total unit cost; cost behaviour (fixed, variable, mixed) and the high-low method.</span></li>
+            <li style="list-style:none;display:flex;gap:14px;align-items:baseline;padding:9px 0;border-top:1px solid #f0eee5;"><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;color:var(--accent-deep);min-width:46px;">L12–15</span><span style="font-size:14.5px;color:#3a4550;line-height:1.5;">Materials: FIFO / LIFO / AVCO pricing, inventory control levels and economic order quantity (EOQ).</span></li>
+            <li style="list-style:none;display:flex;gap:14px;align-items:baseline;padding:9px 0;border-top:1px solid #f0eee5;"><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;color:var(--accent-deep);min-width:46px;">L16–20</span><span style="font-size:14.5px;color:#3a4550;line-height:1.5;">Labour remuneration, payroll and efficiency ratios; expenses and depreciation methods.</span></li>
+          </ul>
+        </article>
+
+        <article style="background:#fff;border:1px solid #e4e0d6;border-left:4px solid var(--accent);border-radius:14px;padding:clamp(20px,3vw,28px);">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:14px;">
+            <span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;letter-spacing:.04em;color:#fff;background:#16293f;padding:5px 10px;border-radius:7px;">PART 3</span>
+            <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:19px;color:#16293f;flex:1;min-width:180px;">Costing Techniques</h4>
+            <span style="font-size:12.5px;font-weight:600;color:#8a8678;">Lessons 21–31</span>
+          </div>
+          <ul style="display:grid;gap:0;">
+            <li style="list-style:none;display:flex;gap:14px;align-items:baseline;padding:9px 0;border-top:1px solid #f0eee5;"><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;color:var(--accent-deep);min-width:46px;">L21–25</span><span style="font-size:14.5px;color:#3a4550;line-height:1.5;">Overheads and absorption costing; marginal vs absorption costing and profit reconciliation.</span></li>
+            <li style="list-style:none;display:flex;gap:14px;align-items:baseline;padding:9px 0;border-top:1px solid #f0eee5;"><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;color:var(--accent-deep);min-width:46px;">L26–28</span><span style="font-size:14.5px;color:#3a4550;line-height:1.5;">Cost bookkeeping; job, batch and service costing.</span></li>
+            <li style="list-style:none;display:flex;gap:14px;align-items:baseline;padding:9px 0;border-top:1px solid #f0eee5;"><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;color:var(--accent-deep);min-width:46px;">L29–31</span><span style="font-size:14.5px;color:#3a4550;line-height:1.5;">Process costing: normal and abnormal losses/gains; joint and by-products.</span></li>
+          </ul>
+        </article>
+
+        <article style="background:#fff;border:1px solid #e4e0d6;border-left:4px solid var(--accent);border-radius:14px;padding:clamp(20px,3vw,28px);">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:14px;">
+            <span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;letter-spacing:.04em;color:#fff;background:#16293f;padding:5px 10px;border-radius:7px;">PART 4</span>
+            <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:19px;color:#16293f;flex:1;min-width:180px;">Decision Making</h4>
+            <span style="font-size:12.5px;font-weight:600;color:#8a8678;">Lessons 32–39</span>
+          </div>
+          <ul style="display:grid;gap:0;">
+            <li style="list-style:none;display:flex;gap:14px;align-items:baseline;padding:9px 0;border-top:1px solid #f0eee5;"><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;color:var(--accent-deep);min-width:46px;">L32–33</span><span style="font-size:14.5px;color:#3a4550;line-height:1.5;">Cost-volume-profit analysis: contribution, C/S ratio, break-even, margin of safety and target profit.</span></li>
+            <li style="list-style:none;display:flex;gap:14px;align-items:baseline;padding:9px 0;border-top:1px solid #f0eee5;"><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;color:var(--accent-deep);min-width:46px;">L34–36</span><span style="font-size:14.5px;color:#3a4550;line-height:1.5;">Short-term decisions: relevant costs, limiting factors and make / buy-in problems.</span></li>
+            <li style="list-style:none;display:flex;gap:14px;align-items:baseline;padding:9px 0;border-top:1px solid #f0eee5;"><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;color:var(--accent-deep);min-width:46px;">L37–39</span><span style="font-size:14.5px;color:#3a4550;line-height:1.5;">Capital investment appraisal: interest and discounting, NPV, IRR and payback.</span></li>
+          </ul>
+        </article>
+
+        <article style="background:#fff;border:1px solid #e4e0d6;border-left:4px solid var(--accent);border-radius:14px;padding:clamp(20px,3vw,28px);">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:14px;">
+            <span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;letter-spacing:.04em;color:#fff;background:#16293f;padding:5px 10px;border-radius:7px;">PART 5</span>
+            <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:19px;color:#16293f;flex:1;min-width:180px;">Cash Management</h4>
+            <span style="font-size:12.5px;font-weight:600;color:#8a8678;">Lessons 40–50</span>
+          </div>
+          <ul style="display:grid;gap:0;">
+            <li style="list-style:none;display:flex;gap:14px;align-items:baseline;padding:9px 0;border-top:1px solid #f0eee5;"><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;color:var(--accent-deep);min-width:46px;">L40–43</span><span style="font-size:14.5px;color:#3a4550;line-height:1.5;">Cash and cash flows; cash vs accruals; treasury functions and cash-handling procedures.</span></li>
+            <li style="list-style:none;display:flex;gap:14px;align-items:baseline;padding:9px 0;border-top:1px solid #f0eee5;"><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;color:var(--accent-deep);min-width:46px;">L44–48</span><span style="font-size:14.5px;color:#3a4550;line-height:1.5;">Forecasting cash flows and cash budgets; moving averages; investing surplus funds; raising bank finance.</span></li>
+            <li style="list-style:none;display:flex;gap:14px;align-items:baseline;padding:9px 0;border-top:1px solid #f0eee5;"><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;color:var(--accent-deep);min-width:46px;">L49–50</span><span style="font-size:14.5px;color:#3a4550;line-height:1.5;">Review and preparation for the final examination (all CLOs).</span></li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- Deadlines -->
+      <h3 style="margin:0 0 22px;font-family:'Schibsted Grotesk';font-weight:700;font-size:22px;color:#16293f;">Key Timeline</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;">
+        <div style="background:#fff;border:1px solid #e4e0d6;border-radius:13px;padding:20px;display:flex;flex-direction:column;gap:8px;">
+          <span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:13px;color:var(--accent-deep);">TBU</span>
+          <span style="font-weight:700;color:#16293f;font-size:15.5px;">Quizzes</span>
+          <span style="font-size:13px;color:#6b7480;line-height:1.5;">Quiz 1 - Chapter 1 - 5<br>Quiz 2 - Chapter 6 -12<br>Quiz 3 - Chapter 13-15<br>Quiz 4 - Chapter 15-18</span>
+        </div>
+        <div style="background:#fff;border:1px solid #e4e0d6;border-radius:13px;padding:20px;display:flex;flex-direction:column;gap:8px;">
+          <span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:13px;color:var(--accent-deep);">&nbsp;14-18 Sep 2026</span>
+          <span style="font-weight:700;color:#16293f;font-size:15.5px;">Midterm examination</span>
+          <span style="font-size:13px;color:#6b7480;line-height:1.5;">Chapter 1 to 12 management information, cost recording and costing techniques.</span>
+        </div>
+        <div style="background:#fff;border:1px solid #e4e0d6;border-radius:13px;padding:20px;display:flex;flex-direction:column;gap:8px;">
+          <span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:13px;color:var(--accent-deep);">15 Dec 2026</span>
+          <span style="font-weight:700;color:#16293f;font-size:15.5px;">Group report submission</span><span style="font-size:13px;color:#6b7480;line-height:1.5;">&nbsp;Assignment report of information-comparison findings.</span>
+          
+        </div>
+        <div style="background:#fff;border:1px solid #e4e0d6;border-radius:13px;padding:20px;display:flex;flex-direction:column;gap:8px;">
+          <span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:13px;color:var(--accent-deep);">8-25 Dec 2026</span>
+          <span style="font-weight:700;color:#16293f;font-size:15.5px;">Final examination</span>
+          <span style="font-size:13px;color:#6b7480;line-height:1.5;">Comprehensive across all five parts and learning outcomes.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:#16293f;color:#cdd5dd;">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(44px,6vw,68px) clamp(18px,5vw,48px) 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:36px;">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;"><span style="background:var(--accent);color:#16293f;font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;padding:6px 9px;border-radius:6px;">ACCT 221</span><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:15px;color:#f5f4ef;">Management Accounting 1</span></div>
+        <p style="margin:0;font-size:13.5px;line-height:1.6;color:#9fb0c0;max-width:34ch;">Second-year Foundations in Accountancy. Costing, decision-making and cash management for internal reporting.</p>
+      </div>
+      <div>
+        <p style="margin:0 0 14px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#7e90a2;">Navigate</p>
+        <div style="display:grid;gap:9px;">
+          <a href="Management Accounting Hub.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">Home</a>
+          <a href="Syllabus.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">Syllabus &amp; Schedule</a>
+          <a href="Study Hub.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">Study Reference Hub</a>
+          <a href="Exercises.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">Exercises</a>
+          <a href="About Lecturer.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">About the Lecturer</a>
+          <a href="Active Learning.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">Active Learning</a>
+          <a href="MA2 Chatbot.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">MA2 Chatbot</a>
+        </div>
+      </div>
+      <div>
+        <p style="margin:0 0 14px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#7e90a2;">Contact</p>
+        <div style="display:grid;gap:9px;font-size:14px;line-height:1.5;">
+          <span style="color:#f5f4ef;font-weight:600;">Mean Udam, MSc, ACCA</span>
+          <a href="mailto:mudam@cam-ed.com" style="text-decoration:none;color:var(--accent);font-weight:600;transition:color .15s;" style-hover="color:#c79e5b;">mudam@cam-ed.com</a>
+          <span style="color:#9fb0c0;">CamEd Business School</span>
+          <span style="color:#9fb0c0;">Term: July – December 2026</span>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.1);">
+      <div style="max-width:1180px;margin:0 auto;padding:18px clamp(18px,5vw,48px);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:12.5px;color:#7e90a2;">
+        <span>© 2026 Management Accounting 1 · ACCT 221</span>
+        <span>Course hub · syllabus · study reference · exercises</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#b08d4f&quot;,&quot;options&quot;:[&quot;#b08d4f&quot;,&quot;#1f7a6d&quot;,&quot;#8c2f39&quot;,&quot;#3a6ea5&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Appearance&quot;}}">
+class Component extends DCLogic {
+  state = {
+    activeTool: 'cvp',
+    activeSection: 'syllabus',
+    cvpFC: '12000', cvpSP: '50', cvpVC: '30', cvpTarget: '8000',
+    hlHighU: '1100', hlHighC: '18500', hlLowU: '600', hlLowC: '12000',
+    eoqD: '24000', eoqCo: '30', eoqCh: '2.5',
+    vStdQ: '2', vStdP: '5', vActU: '1000', vActQ: '2100', vActP: '4.8',
+    quizAnswers: {}
+  };
+
+  QUESTIONS = [
+    { q: 'Contribution per unit is calculated as:', options: ['Selling price − variable cost per unit', 'Selling price − fixed cost per unit', 'Sales − total cost', 'Fixed cost ÷ units sold'], correct: 0, explanation: 'Contribution = selling price − variable cost per unit. It covers fixed costs first, then forms profit.' },
+    { q: 'The break-even point in units equals:', options: ['Fixed costs ÷ contribution per unit', 'Fixed costs ÷ selling price', 'Contribution ÷ fixed costs', 'Variable cost ÷ contribution'], correct: 0, explanation: 'At break-even, total contribution exactly covers fixed costs, so units = fixed costs ÷ contribution per unit.' },
+    { q: 'The high-low method is used to:', options: ['Separate the fixed and variable elements of a mixed cost', 'Value closing inventory', 'Calculate the economic order quantity', 'Apportion overheads to cost centres'], correct: 0, explanation: 'High-low uses the highest and lowest activity levels to estimate variable cost per unit and the fixed element.' },
+    { q: 'A material price variance is favourable when:', options: ['The actual price paid is lower than the standard price', 'More material is used than standard', 'Actual output exceeds budget', 'The standard price rises'], correct: 0, explanation: 'Paying less than standard gives a favourable price variance: (SP − AP) × actual quantity.' },
+    { q: 'The economic order quantity (EOQ) minimises:', options: ['Total ordering and holding costs', 'The purchase price of materials', 'The reorder level', 'Total annual demand'], correct: 0, explanation: 'EOQ = √(2·Co·D ÷ Ch) is the order size where ordering cost and holding cost are minimised in total.' },
+    { q: 'Margin of safety measures:', options: ['How far sales can fall before reaching break-even', 'Total contribution earned', 'The profit at break-even', 'Fixed costs as a % of sales'], correct: 0, explanation: 'Margin of safety is the excess of budgeted (or actual) sales over the break-even level — the cushion before losses.' }
+  ];
+
+  componentDidMount() {
+    this.applyTweaks();
+    this.paintTabs();
+    this.paintNav();
+    const ids = ['home', 'syllabus', 'study', 'tools', 'portfolio'];
+    this.io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) this.setState({ activeSection: e.target.id });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    if (this.rootEl) ids.forEach((id) => { const el = this.rootEl.querySelector('#' + id); if (el) this.io.observe(el); });
+  }
+
+  componentDidUpdate() {
+    this.applyTweaks();
+    this.paintTabs();
+    this.paintNav();
+  }
+
+  componentWillUnmount() { if (this.io) this.io.disconnect(); }
+
+  applyTweaks() {
+    if (!this.rootEl) return;
+    const accent = this.props.accent || '#b08d4f';
+    this.rootEl.style.setProperty('--accent', accent);
+    const showW = this.props.showWorkedExamples !== false;
+    this.rootEl.querySelectorAll('[data-worked]').forEach((el) => { el.style.display = showW ? '' : 'none'; });
+    const showS = this.props.showStats !== false;
+    this.rootEl.querySelectorAll('[data-statband]').forEach((el) => { el.style.display = showS ? '' : 'none'; });
+  }
+
+  paintTabs() {
+    if (!this.rootEl) return;
+    this.rootEl.querySelectorAll('[data-tool-tab]').forEach((t) => {
+      const active = t.getAttribute('data-tool-tab') === this.state.activeTool;
+      t.style.background = active ? '#16293f' : 'transparent';
+      t.style.color = active ? '#f5f4ef' : '#3a4550';
+      t.style.borderColor = active ? '#16293f' : '#d6d1c4';
+    });
+  }
+
+  paintNav() {
+    if (!this.rootEl) return;
+    this.rootEl.querySelectorAll('[data-nav]').forEach((a) => {
+      const active = a.getAttribute('data-nav') === this.state.activeSection;
+      a.style.color = active ? 'var(--accent-deep)' : '#3a4550';
+      a.style.background = active ? 'rgba(176,141,79,0.12)' : 'transparent';
+    });
+  }
+
+  field(key) { return (e) => this.setState({ [key]: e.target.value }); }
+
+  pickAnswer(qi, oi) {
+    if (this.state.quizAnswers[qi] !== undefined) return;
+    this.setState((s) => ({ quizAnswers: { ...s.quizAnswers, [qi]: oi } }));
+  }
+
+  renderVals() {
+    const S = this.state;
+    const num = (v) => { const n = parseFloat(v); return isFinite(n) ? n : 0; };
+    const money = (n) => isFinite(n) ? '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '—';
+    const pct = (n) => isFinite(n) ? (n * 100).toFixed(1) + '%' : '—';
+    const round2 = (n) => Math.round(n * 100) / 100;
+
+    // CVP
+    const fc = num(S.cvpFC), sp = num(S.cvpSP), vc = num(S.cvpVC), tp = num(S.cvpTarget);
+    const contrib = sp - vc;
+    const csRatio = sp ? contrib / sp : NaN;
+    const bepU = contrib ? fc / contrib : NaN;
+    const bepR = csRatio ? fc / csRatio : NaN;
+    const tgtU = contrib ? (fc + tp) / contrib : NaN;
+
+    // High-Low
+    const hu = num(S.hlHighU), hc = num(S.hlHighC), lu = num(S.hlLowU), lc = num(S.hlLowC);
+    const vcu = (hu - lu) ? (hc - lc) / (hu - lu) : NaN;
+    const fc2 = isFinite(vcu) ? hc - vcu * hu : NaN;
+
+    // EOQ
+    const d = num(S.eoqD), co = num(S.eoqCo), ch = num(S.eoqCh);
+    const eoq = ch > 0 ? Math.sqrt(2 * d * co / ch) : NaN;
+    const orders = eoq ? d / eoq : NaN;
+    const totalCost = isFinite(eoq) ? orders * co + (eoq / 2) * ch : NaN;
+
+    // Variance
+    const sq = num(S.vStdQ) * num(S.vActU);
+    const aq = num(S.vActQ), spr = num(S.vStdP), apr = num(S.vActP);
+    const priceVar = (spr - apr) * aq;
+    const usageVar = (sq - aq) * spr;
+    const totalVar = priceVar + usageVar;
+    const fmtVar = (v) => isFinite(v) ? '$' + Math.abs(round2(v)).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + (v >= 0 ? ' F' : ' A') : '—';
+    const varStyle = (v) => 'font-family:\'Schibsted Grotesk\';font-weight:700;font-size:19px;color:' + (v >= 0 ? '#6fd39a' : '#f0a3a3');
+
+    // Quiz
+    const baseOpt = 'display:flex;justify-content:space-between;gap:12px;align-items:center;text-align:left;width:100%;padding:13px 16px;border:1px solid #d6d1c4;border-radius:10px;background:#fff;color:#16293f;font-size:14.5px;font-weight:500;cursor:pointer;font-family:\'Public Sans\';transition:all .15s;';
+    const correctOpt = 'display:flex;justify-content:space-between;gap:12px;align-items:center;text-align:left;width:100%;padding:13px 16px;border:1.5px solid #1f7a55;border-radius:10px;background:#e9f5ee;color:#155c3f;font-size:14.5px;font-weight:600;cursor:default;font-family:\'Public Sans\';';
+    const wrongOpt = 'display:flex;justify-content:space-between;gap:12px;align-items:center;text-align:left;width:100%;padding:13px 16px;border:1.5px solid #c0504d;border-radius:10px;background:#fbecec;color:#8c2f2f;font-size:14.5px;font-weight:600;cursor:default;font-family:\'Public Sans\';';
+    const dimOpt = 'display:flex;justify-content:space-between;gap:12px;align-items:center;text-align:left;width:100%;padding:13px 16px;border:1px solid #ece9df;border-radius:10px;background:#faf9f5;color:#8a8678;font-size:14.5px;font-weight:500;cursor:default;font-family:\'Public Sans\';';
+
+    let correctCount = 0;
+    const quizList = this.QUESTIONS.map((q, qi) => {
+      const picked = S.quizAnswers[qi];
+      const answered = picked !== undefined;
+      if (answered && picked === q.correct) correctCount++;
+      const options = q.options.map((text, oi) => {
+        let style = baseOpt;
+        let mark = '';
+        if (answered) {
+          if (oi === q.correct) { style = correctOpt; mark = '✓'; }
+          else if (oi === picked) { style = wrongOpt; mark = '✕'; }
+          else { style = dimOpt; }
+        }
+        return { text, style, mark, onClick: () => this.pickAnswer(qi, oi) };
+      });
+      return {
+        label: 'Q' + (qi + 1) + '. ' + q.q,
+        options, answered,
+        explanation: q.explanation,
+        explStyle: 'margin:14px 0 0;padding:12px 14px;background:var(--accent-soft);border-radius:9px;font-size:13.5px;line-height:1.55;color:#5a4a2e;'
+      };
+    });
+    const answeredCount = Object.keys(S.quizAnswers).length;
+
+    return {
+      setRoot: (el) => { this.rootEl = el; },
+      isCvp: S.activeTool === 'cvp',
+      isHighLow: S.activeTool === 'highlow',
+      isEoq: S.activeTool === 'eoq',
+      isVar: S.activeTool === 'variance',
+      isQuiz: S.activeTool === 'quiz',
+      pick_cvp: () => this.setState({ activeTool: 'cvp' }),
+      pick_hl: () => this.setState({ activeTool: 'highlow' }),
+      pick_eoq: () => this.setState({ activeTool: 'eoq' }),
+      pick_var: () => this.setState({ activeTool: 'variance' }),
+      pick_quiz: () => this.setState({ activeTool: 'quiz' }),
+
+      cvpFC: S.cvpFC, cvpSP: S.cvpSP, cvpVC: S.cvpVC, cvpTarget: S.cvpTarget,
+      on_cvpFC: this.field('cvpFC'), on_cvpSP: this.field('cvpSP'), on_cvpVC: this.field('cvpVC'), on_cvpTarget: this.field('cvpTarget'),
+      cvpContrib: money(contrib),
+      cvpCsRatio: pct(csRatio),
+      cvpBepUnits: isFinite(bepU) && bepU >= 0 ? Math.ceil(bepU).toLocaleString() + ' units' : '—',
+      cvpBepRev: money(bepR),
+      cvpTargetUnits: isFinite(tgtU) && tgtU >= 0 ? Math.ceil(tgtU).toLocaleString() + ' units' : '—',
+
+      hlHighU: S.hlHighU, hlHighC: S.hlHighC, hlLowU: S.hlLowU, hlLowC: S.hlLowC,
+      on_hlHighU: this.field('hlHighU'), on_hlHighC: this.field('hlHighC'), on_hlLowU: this.field('hlLowU'), on_hlLowC: this.field('hlLowC'),
+      hlVc: isFinite(vcu) ? '$' + round2(vcu).toLocaleString('en-US', { maximumFractionDigits: 2 }) + ' / unit' : '—',
+      hlFc: money(fc2),
+      hlEq: (isFinite(vcu) && isFinite(fc2)) ? 'y = ' + money(fc2) + ' + $' + round2(vcu) + 'x' : '—',
+
+      eoqD: S.eoqD, eoqCo: S.eoqCo, eoqCh: S.eoqCh,
+      on_eoqD: this.field('eoqD'), on_eoqCo: this.field('eoqCo'), on_eoqCh: this.field('eoqCh'),
+      eoqVal: isFinite(eoq) ? Math.round(eoq).toLocaleString() + ' units' : '—',
+      eoqOrders: isFinite(orders) ? orders.toFixed(1) + ' / year' : '—',
+      eoqTotalCost: money(totalCost),
+
+      vStdQ: S.vStdQ, vStdP: S.vStdP, vActU: S.vActU, vActQ: S.vActQ, vActP: S.vActP,
+      on_vStdQ: this.field('vStdQ'), on_vStdP: this.field('vStdP'), on_vActU: this.field('vActU'), on_vActQ: this.field('vActQ'), on_vActP: this.field('vActP'),
+      vSQ: isFinite(sq) ? sq.toLocaleString() + ' kg' : '—',
+      vPriceTxt: fmtVar(priceVar), vPriceStyle: varStyle(priceVar),
+      vUsageTxt: fmtVar(usageVar), vUsageStyle: varStyle(usageVar),
+      vTotalTxt: fmtVar(totalVar), vTotalStyle: varStyle(totalVar),
+
+      quizList,
+      scoreText: correctCount + ' / ' + this.QUESTIONS.length,
+      resetQuiz: () => this.setState({ quizAnswers: {} })
+    };
+  }
+}
+</script>
+</body>
+</html>

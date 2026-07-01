@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Schibsted+Grotesk:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#f5f4ef;color:#3a4550;font-family:'Public Sans',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  ::selection{background:rgba(176,141,79,0.25);}
+  ul{margin:0;padding:0;}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</helmet>
+<div ref="{{ setRoot }}" style="--accent:#b08d4f;--accent-deep:#97743a;--accent-soft:#f3ead8;min-height:100vh;">
+
+  <!-- ============ NAV ============ -->
+  <header style="position:sticky;top:0;z-index:50;background:rgba(245,244,239,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #e4e0d6;">
+    <nav style="max-width:1180px;margin:0 auto;padding:13px clamp(18px,5vw,48px);display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;">
+      <a href="Management Accounting Hub.dc.html" style="display:flex;align-items:center;gap:11px;text-decoration:none;flex-shrink:0;">
+        <span style="background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-weight:700;font-size:13px;letter-spacing:.03em;padding:7px 10px;border-radius:7px;">ACCT 221</span>
+        <span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:16px;color:#16293f;letter-spacing:-0.01em;">Management Accounting 1</span>
+      </a>
+      <div style="display:flex;gap:4px;flex-wrap:wrap;align-items:center;">
+        <a data-nav="home" href="Management Accounting Hub.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">Home</a>
+        <a data-nav="syllabus" href="Syllabus.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">Syllabus</a>
+        <a data-nav="study" href="Study Hub.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">Study Hub</a>
+        <a data-nav="exercises" href="Exercises.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">Exercises</a>
+        <a data-nav="about" href="About Lecturer.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">Lecturer</a>
+        <a data-nav="active" href="Active Learning.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">Active Learning</a>
+        <a data-nav="chatbot" href="MA2 Chatbot.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">MA2 Chatbot</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============ ACTIVE LEARNING ============ -->
+  <section id="active" data-screen-label="Active Learning" style="scroll-margin-top:74px;padding:clamp(48px,7vw,88px) 0 clamp(56px,8vw,100px);">
+    <div style="max-width:1180px;margin:0 auto;padding:0 clamp(18px,5vw,48px);">
+
+      <p style="margin:0 0 12px;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-deep);">Engage &amp; Apply</p>
+      <h2 style="margin:0 0 14px;font-family:'Schibsted Grotesk';font-weight:700;font-size:clamp(28px,4vw,44px);letter-spacing:-0.02em;color:#16293f;">Active Learning</h2>
+      <p style="margin:0 0 clamp(30px,4vw,42px);max-width:66ch;font-size:16px;line-height:1.7;color:#4a5550;">Management accounting is best learned by doing. These in-class activities turn costing, decision-making and cash-management theory into practice — through collaboration, real scenarios, friendly competition and hands-on problem solving.</p>
+
+      <!-- ============ CLASSROOM TOOLKIT ============ -->
+      <div style="margin:0 0 clamp(28px,4vw,40px);">
+        <p style="margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-deep);">Run the room</p>
+        <h3 style="margin:0 0 10px;font-family:'Schibsted Grotesk';font-weight:700;font-size:clamp(24px,3vw,32px);letter-spacing:-0.02em;color:#16293f;">Classroom Toolkit</h3>
+        <p style="margin:0;max-width:66ch;font-size:15px;line-height:1.65;color:#4a5550;">Everything you need to run an active class in one place — pick a student at random, split the room into balanced groups, time-box a task, roll for an exercise, and keep score during friendly competitions.</p>
+      </div>
+
+      <!-- Lucky Student Spinner -->
+      <div style="background:#fff;border:1px solid #e4e0d6;border-radius:18px;padding:clamp(22px,3vw,32px);margin-bottom:clamp(40px,6vw,60px);box-shadow:0 20px 46px -30px rgba(22,41,63,0.35);">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
+          <span style="flex-shrink:0;width:48px;height:48px;border-radius:12px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">SP</span>
+          <div>
+            <p style="margin:0 0 3px;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9a9686;">Random picker</p>
+            <h3 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:22px;color:#16293f;">Lucky Student Spinner</h3>
+          </div>
+        </div>
+        <p style="margin:0 0 24px;max-width:70ch;font-size:14.5px;line-height:1.6;color:#4a5560;">Type or upload your class list, update the wheel, then spin to pick a student at random. Your list is saved on this device, so it's ready next time.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,44px);align-items:flex-start;">
+
+          <!-- Wheel -->
+          <div style="flex:0 0 auto;width:min(100%,360px);margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:18px;">
+            <div style="position:relative;width:100%;aspect-ratio:1;">
+              <canvas ref="{{ setCanvas }}" width="720" height="720" style="width:100%;height:100%;display:block;"></canvas>
+              <div style="position:absolute;top:-4px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:15px solid transparent;border-right:15px solid transparent;border-top:24px solid var(--accent-deep);filter:drop-shadow(0 2px 3px rgba(0,0,0,.28));z-index:2;"></div>
+            </div>
+            <button onClick="{{ spin }}" disabled="{{ spinning }}" style="width:100%;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-weight:700;font-size:16px;padding:14px 22px;border-radius:12px;cursor:pointer;transition:background .15s,transform .1s;" style-hover="background:var(--accent-deep);" style-active="transform:scale(.98);">Spin the wheel</button>
+            <div style="min-height:60px;width:100%;display:flex;align-items:center;justify-content:center;">
+              <sc-if value="{{ hasWinner }}" hint-placeholder-val="{{ false }}">
+                <div style="width:100%;text-align:center;background:var(--accent-soft);border:1px solid #e6dcc4;border-radius:12px;padding:12px 16px;">
+                  <span style="display:block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:3px;">Selected</span>
+                  <span style="font-family:'Schibsted Grotesk';font-weight:800;font-size:22px;color:#16293f;">{{ winner }}</span>
+                </div>
+              </sc-if>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <div style="flex:1;min-width:280px;display:flex;flex-direction:column;gap:14px;">
+            <div>
+              <label style="display:block;font-size:13px;font-weight:700;color:#16293f;margin-bottom:7px;">Class list <span style="font-weight:500;color:#9a9686;">— one name per line</span></label>
+              <textarea ref="{{ setNamesArea }}" placeholder="e.g.&#10;Sophanna&#10;Dara&#10;Sreymom&#10;Vichea" rows="9" style="width:100%;resize:vertical;font-family:'Public Sans';font-size:14.5px;line-height:1.6;color:#3a4550;padding:12px 14px;border:1px solid #d6d1c4;border-radius:11px;background:#fbfaf6;outline:none;" style-focus="border-color:var(--accent);"></textarea>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;">
+              <button onClick="{{ loadNames }}" style="border:none;background:var(--accent);color:#16293f;font-family:'Schibsted Grotesk';font-weight:700;font-size:14px;padding:11px 18px;border-radius:10px;cursor:pointer;transition:transform .12s;" style-hover="transform:translateY(-1px);">Update wheel</button>
+              <label style="display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d1c4;background:#fff;color:#16293f;font-family:'Schibsted Grotesk';font-weight:700;font-size:14px;padding:11px 18px;border-radius:10px;cursor:pointer;transition:border-color .12s;" style-hover="border-color:var(--accent);">Upload .txt / .csv / .xlsx<input type="file" accept=".txt,.csv,.xlsx,.xls" onChange="{{ onUpload }}" style="display:none;" /></label>
+              <button onClick="{{ clearNames }}" style="border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-weight:600;font-size:14px;padding:11px 18px;border-radius:10px;cursor:pointer;transition:all .12s;" style-hover="border-color:#c98b8b;color:#a34a4a;">Clear</button>
+            </div>
+            <label style="display:inline-flex;align-items:center;gap:10px;font-size:14px;color:#4a5560;cursor:pointer;user-select:none;">
+              <input type="checkbox" onChange="{{ toggleRemove }}" style="width:17px;height:17px;accent-color:var(--accent-deep);cursor:pointer;" />
+              Remove a student after they're picked
+            </label>
+            <p style="margin:4px 0 0;font-size:13px;font-weight:600;color:#9a9686;">{{ countLabel }}</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Random Group Maker -->
+      <div style="background:#fff;border:1px solid #e4e0d6;border-radius:18px;padding:clamp(22px,3vw,32px);margin-bottom:clamp(44px,6vw,64px);box-shadow:0 20px 46px -30px rgba(22,41,63,0.35);">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
+          <span style="flex-shrink:0;width:48px;height:48px;border-radius:12px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">GR</span>
+          <div>
+            <p style="margin:0 0 3px;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9a9686;">Team builder</p>
+            <h3 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:22px;color:#16293f;">Random Group Maker</h3>
+          </div>
+        </div>
+        <p style="margin:0 0 22px;max-width:70ch;font-size:14.5px;line-height:1.6;color:#4a5560;">Split the class into random teams in one click. Choose how many groups you want — or how many students per group. Your saved class list is used automatically, and you can upload a new one anytime. Excel (.xlsx), CSV and text files are all accepted.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:flex-end;">
+          <div>
+            <label style="display:block;font-size:13px;font-weight:700;color:#16293f;margin-bottom:7px;">Split by</label>
+            <div style="display:inline-flex;border:1px solid #d6d1c4;border-radius:10px;overflow:hidden;">
+              <button data-gmode="count" onClick="{{ setModeCount }}" style="border:none;border-right:1px solid #d6d1c4;padding:10px 16px;font-family:'Public Sans';font-weight:600;font-size:14px;cursor:pointer;background:#16293f;color:#f5f4ef;">Number of groups</button>
+              <button data-gmode="size" onClick="{{ setModeSize }}" style="border:none;padding:10px 16px;font-family:'Public Sans';font-weight:600;font-size:14px;cursor:pointer;background:#fff;color:#16293f;">Students per group</button>
+            </div>
+          </div>
+          <div>
+            <label style="display:block;font-size:13px;font-weight:700;color:#16293f;margin-bottom:7px;">{{ groupNLabel }}</label>
+            <input ref="{{ setGroupInput }}" type="number" min="1" defaultValue="4" style="width:100px;padding:10px 12px;border:1px solid #d6d1c4;border-radius:10px;font-family:'Public Sans';font-size:15px;color:#3a4550;background:#fbfaf6;outline:none;" style-focus="border-color:var(--accent);" />
+          </div>
+          <button onClick="{{ makeGroups }}" style="border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-weight:700;font-size:15px;padding:12px 22px;border-radius:10px;cursor:pointer;transition:background .15s,transform .1s;" style-hover="background:var(--accent-deep);" style-active="transform:scale(.98);">Make groups</button>
+          <label style="display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d1c4;background:#fff;color:#16293f;font-family:'Schibsted Grotesk';font-weight:700;font-size:14px;padding:12px 18px;border-radius:10px;cursor:pointer;transition:border-color .12s;" style-hover="border-color:var(--accent);">Upload students<input type="file" accept=".txt,.csv,.xlsx,.xls" onChange="{{ onUpload }}" style="display:none;" /></label>
+          <sc-if value="{{ hasGroups }}" hint-placeholder-val="{{ false }}">
+            <button onClick="{{ clearGroups }}" style="border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-weight:600;font-size:14px;padding:12px 18px;border-radius:10px;cursor:pointer;transition:all .12s;" style-hover="border-color:#c98b8b;color:#a34a4a;">Clear groups</button>
+          </sc-if>
+        </div>
+        <p style="margin:14px 0 0;font-size:13px;font-weight:600;color:#9a9686;">{{ groupCountLabel }}</p>
+
+        <sc-if value="{{ hasGroups }}" hint-placeholder-val="{{ false }}">
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin-top:22px;">
+            <sc-for list="{{ groups }}" as="g" hint-placeholder-count="3">
+              <div style="background:#fbfaf6;border:1px solid #e4e0d6;border-radius:14px;padding:16px 18px;">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:11px;">
+                  <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:16px;color:#16293f;">{{ g.title }}</h4>
+                  <span style="font-size:11.5px;font-weight:700;color:var(--accent-deep);background:var(--accent-soft);border-radius:999px;padding:4px 10px;">{{ g.count }}</span>
+                </div>
+                <ul style="display:grid;gap:6px;">
+                  <sc-for list="{{ g.members }}" as="m" hint-placeholder-count="3">
+                    <li style="list-style:none;padding-left:16px;position:relative;font-size:14px;line-height:1.5;color:#3a4550;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>{{ m }}</li>
+                  </sc-for>
+                </ul>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-bottom:18px;">
+
+        <!-- Countdown Timer -->
+        <div style="background:#fff;border:1px solid #e4e0d6;border-radius:18px;padding:clamp(22px,3vw,30px);box-shadow:0 20px 46px -30px rgba(22,41,63,0.35);display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:center;gap:13px;margin-bottom:18px;">
+            <span style="flex-shrink:0;width:44px;height:44px;border-radius:11px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;">TM</span>
+            <div>
+              <p style="margin:0 0 3px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9a9686;">Time-box tasks</p>
+              <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:19px;color:#16293f;">Countdown Timer</h4>
+            </div>
+          </div>
+          <div style="font-family:'Schibsted Grotesk';font-weight:800;font-size:clamp(52px,9vw,72px);line-height:1;letter-spacing:-0.02em;text-align:center;font-variant-numeric:tabular-nums;color: {{ timerColor }};">{{ timerDisplay }}</div>
+          <div style="height:8px;border-radius:999px;background:#eee9dc;overflow:hidden;margin:16px 0 6px;">
+            <div style="height:100%;background:var(--accent);border-radius:999px;transition:width .35s linear;width: {{ timerPctStyle }};"></div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin:14px 0;">
+            <sc-for list="{{ timerPresets }}" as="p" hint-placeholder-count="6">
+              <button onClick="{{ p.on }}" style="border:1px solid #d6d1c4;background:#fbfaf6;color:#16293f;font-family:'Public Sans';font-weight:600;font-size:13px;padding:7px 13px;border-radius:9px;cursor:pointer;transition:all .12s;" style-hover="border-color:var(--accent);color:var(--accent-deep);">{{ p.label }}</button>
+            </sc-for>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-bottom:16px;">
+            <input ref="{{ setTimerMin }}" type="number" min="1" step="1" defaultValue="5" style="width:74px;padding:9px 11px;border:1px solid #d6d1c4;border-radius:9px;font-family:'Public Sans';font-size:15px;color:#3a4550;background:#fbfaf6;outline:none;" style-focus="border-color:var(--accent);" />
+            <span style="font-size:13px;font-weight:600;color:#6b7480;">min</span>
+            <button onClick="{{ setCustomTimer }}" style="border:1px solid #d6d1c4;background:#fff;color:#16293f;font-family:'Schibsted Grotesk';font-weight:700;font-size:14px;padding:9px 16px;border-radius:9px;cursor:pointer;transition:border-color .12s;" style-hover="border-color:var(--accent);">Set</button>
+          </div>
+          <div style="display:flex;gap:10px;margin-top:auto;">
+            <button onClick="{{ startPauseTimer }}" style="flex:1;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-weight:700;font-size:15px;padding:12px 20px;border-radius:11px;cursor:pointer;transition:background .15s,transform .1s;" style-hover="background:var(--accent-deep);" style-active="transform:scale(.98);">{{ timerBtnLabel }}</button>
+            <button onClick="{{ resetTimer }}" style="border:1px solid #d6d1c4;background:#fff;color:#16293f;font-family:'Schibsted Grotesk';font-weight:700;font-size:14px;padding:12px 18px;border-radius:11px;cursor:pointer;transition:border-color .12s;" style-hover="border-color:var(--accent);">Reset</button>
+          </div>
+          <button onClick="{{ presentTimer }}" style="margin-top:10px;width:100%;border:1px dashed #cfc9ba;background:transparent;color:#6b7480;font-family:'Public Sans';font-weight:600;font-size:13.5px;padding:10px;border-radius:11px;cursor:pointer;transition:all .12s;" style-hover="border-color:var(--accent);color:var(--accent-deep);">⤢ Present full screen</button>
+        </div>
+
+        <!-- Random Number -->
+        <div style="background:#fff;border:1px solid #e4e0d6;border-radius:18px;padding:clamp(22px,3vw,30px);box-shadow:0 20px 46px -30px rgba(22,41,63,0.35);display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:center;gap:13px;margin-bottom:18px;">
+            <span style="flex-shrink:0;width:44px;height:44px;border-radius:11px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;">RN</span>
+            <div>
+              <p style="margin:0 0 3px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9a9686;">Pick at random</p>
+              <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:19px;color:#16293f;">Random Number</h4>
+            </div>
+          </div>
+          <div style="flex:1;min-height:110px;display:flex;align-items:center;justify-content:center;">
+            <span style="font-family:'Schibsted Grotesk';font-weight:800;font-size:clamp(60px,11vw,96px);line-height:1;letter-spacing:-0.02em;color:#16293f;font-variant-numeric:tabular-nums;">{{ rollDisplay }}</span>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;margin:12px 0 16px;">
+            <div>
+              <label style="display:block;font-size:12px;font-weight:700;color:#16293f;margin-bottom:5px;">From</label>
+              <input ref="{{ setRollMin }}" type="number" defaultValue="1" style="width:80px;padding:9px 11px;border:1px solid #d6d1c4;border-radius:9px;font-family:'Public Sans';font-size:15px;color:#3a4550;background:#fbfaf6;outline:none;" style-focus="border-color:var(--accent);" />
+            </div>
+            <div>
+              <label style="display:block;font-size:12px;font-weight:700;color:#16293f;margin-bottom:5px;">To</label>
+              <input ref="{{ setRollMax }}" type="number" defaultValue="20" style="width:80px;padding:9px 11px;border:1px solid #d6d1c4;border-radius:9px;font-family:'Public Sans';font-size:15px;color:#3a4550;background:#fbfaf6;outline:none;" style-focus="border-color:var(--accent);" />
+            </div>
+            <button onClick="{{ roll }}" disabled="{{ rolling }}" style="flex:1;min-width:110px;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-weight:700;font-size:15px;padding:12px 20px;border-radius:11px;cursor:pointer;transition:background .15s,transform .1s;" style-hover="background:var(--accent-deep);" style-active="transform:scale(.98);">Roll</button>
+          </div>
+          <p style="margin:0;font-size:13px;line-height:1.5;color:#9a9686;">Pick an exercise, question or page number at random.</p>
+        </div>
+
+        <!-- Attention Signal -->
+        <div style="background:#fff;border:1px solid #e4e0d6;border-radius:18px;padding:clamp(22px,3vw,30px);box-shadow:0 20px 46px -30px rgba(22,41,63,0.35);display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:center;gap:13px;margin-bottom:18px;">
+            <span style="flex-shrink:0;width:44px;height:44px;border-radius:11px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;">AT</span>
+            <div>
+              <p style="margin:0 0 3px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9a9686;">Manage the room</p>
+              <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:19px;color:#16293f;">Attention Signal</h4>
+            </div>
+          </div>
+          <div style="flex:1;display:flex;gap:14px;align-items:center;justify-content:center;margin:8px 0 4px;">
+            <sc-for list="{{ signalLights }}" as="s" hint-placeholder-count="3">
+              <button onClick="{{ s.on }}" style="display:flex;flex-direction:column;align-items:center;gap:9px;border:none;background:transparent;cursor:pointer;padding:6px;">
+                <span style="width:52px;height:52px;border-radius:50%;transition:all .15s;background: {{ s.dot }};box-shadow: {{ s.glow }};"></span>
+                <span style="font-size:12px;font-weight:700;color: {{ s.text }};">{{ s.label }}</span>
+              </button>
+            </sc-for>
+          </div>
+          <p style="margin:12px 0 16px;text-align:center;font-size:14px;line-height:1.5;color:#6b7480;min-height:21px;">{{ signalSub }}</p>
+          <button onClick="{{ presentSignal }}" style="margin-top:auto;width:100%;border:1px dashed #cfc9ba;background:transparent;color:#6b7480;font-family:'Public Sans';font-weight:600;font-size:13.5px;padding:10px;border-radius:11px;cursor:pointer;transition:all .12s;" style-hover="border-color:var(--accent);color:var(--accent-deep);">⤢ Present full screen</button>
+        </div>
+
+      </div>
+
+      <!-- Team Scoreboard -->
+      <div style="background:#fff;border:1px solid #e4e0d6;border-radius:18px;padding:clamp(22px,3vw,32px);margin-bottom:clamp(44px,6vw,64px);box-shadow:0 20px 46px -30px rgba(22,41,63,0.35);">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
+          <span style="flex-shrink:0;width:48px;height:48px;border-radius:12px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">TS</span>
+          <div>
+            <p style="margin:0 0 3px;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9a9686;">Friendly competition</p>
+            <h3 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:22px;color:#16293f;">Team Scoreboard</h3>
+          </div>
+        </div>
+        <p style="margin:0 0 20px;max-width:70ch;font-size:14.5px;line-height:1.6;color:#4a5560;">Track points as teams compete. Add teams by name, or pull them straight from the groups you made above.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:6px;">
+          <input ref="{{ setTeamInput }}" onKeyDown="{{ teamKey }}" type="text" placeholder="Team name…" style="flex:1;min-width:180px;padding:11px 14px;border:1px solid #d6d1c4;border-radius:10px;font-family:'Public Sans';font-size:15px;color:#3a4550;background:#fbfaf6;outline:none;" style-focus="border-color:var(--accent);" />
+          <button onClick="{{ addTeam }}" style="border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-weight:700;font-size:15px;padding:12px 20px;border-radius:10px;cursor:pointer;transition:background .15s,transform .1s;" style-hover="background:var(--accent-deep);" style-active="transform:scale(.98);">Add team</button>
+          <button onClick="{{ loadTeamsFromGroups }}" style="border:1px solid #d6d1c4;background:#fff;color:#16293f;font-family:'Schibsted Grotesk';font-weight:700;font-size:14px;padding:12px 18px;border-radius:10px;cursor:pointer;transition:border-color .12s;" style-hover="border-color:var(--accent);">Load from groups</button>
+          <sc-if value="{{ hasTeams }}" hint-placeholder-val="{{ false }}">
+            <button onClick="{{ resetScores }}" style="border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-weight:600;font-size:14px;padding:12px 18px;border-radius:10px;cursor:pointer;transition:all .12s;" style-hover="border-color:#c98b8b;color:#a34a4a;">Reset scores</button>
+          </sc-if>
+        </div>
+
+        <sc-if value="{{ hasTeams }}" hint-placeholder-val="{{ false }}">
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-top:20px;">
+            <sc-for list="{{ teamRows }}" as="t" hint-placeholder-count="3">
+              <div style="background:#fbfaf6;border:1px solid #e4e0d6;border-radius:14px;padding:16px 18px;">
+                <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px;">
+                  <div style="min-width:0;">
+                    <sc-if value="{{ t.isLeader }}" hint-placeholder-val="{{ false }}">
+                      <span style="display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-deep);background:var(--accent-soft);border-radius:999px;padding:3px 9px;margin-bottom:6px;">★ Leading</span>
+                    </sc-if>
+                    <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:16px;color:#16293f;overflow-wrap:anywhere;">{{ t.name }}</h4>
+                  </div>
+                  <button onClick="{{ t.del }}" style="border:none;background:transparent;color:#b9b3a4;font-size:18px;line-height:1;padding:2px 4px;cursor:pointer;transition:color .12s;" style-hover="color:#a34a4a;">×</button>
+                </div>
+                <div style="font-family:'Schibsted Grotesk';font-weight:800;font-size:42px;line-height:1;color:#16293f;margin:10px 0 14px;font-variant-numeric:tabular-nums;">{{ t.score }}</div>
+                <div style="display:flex;gap:8px;">
+                  <button onClick="{{ t.dec }}" style="border:1px solid #d6d1c4;background:#fff;color:#16293f;font-family:'Schibsted Grotesk';font-weight:700;font-size:16px;width:40px;height:40px;border-radius:10px;cursor:pointer;transition:border-color .12s;" style-hover="border-color:var(--accent);">−</button>
+                  <button onClick="{{ t.inc }}" style="flex:1;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-weight:700;font-size:16px;height:40px;border-radius:10px;cursor:pointer;transition:background .15s;" style-hover="background:var(--accent-deep);">+1</button>
+                  <button onClick="{{ t.inc5 }}" style="border:1px solid #d6d1c4;background:#fff;color:#16293f;font-family:'Schibsted Grotesk';font-weight:700;font-size:14px;width:44px;height:40px;border-radius:10px;cursor:pointer;transition:border-color .12s;" style-hover="border-color:var(--accent);">+5</button>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ noTeams }}" hint-placeholder-val="{{ true }}">
+          <p style="margin:18px 0 0;font-size:14px;color:#9a9686;">No teams yet — add one above, or load the groups you made.</p>
+        </sc-if>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:18px;">
+
+        <!-- Group Work -->
+        <article style="background:#fff;border:1px solid #e4e0d6;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:15px;">
+          <div style="display:flex;align-items:center;gap:14px;">
+            <span style="flex-shrink:0;width:48px;height:48px;border-radius:12px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">GW</span>
+            <div>
+              <p style="margin:0 0 3px;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9a9686;">Collaborative</p>
+              <h3 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:20px;color:#16293f;">Group Work</h3>
+            </div>
+          </div>
+          <p style="margin:0;font-size:14.5px;line-height:1.6;color:#4a5560;">Teams tackle a costing or budgeting task together, divide the workload, then present their reasoning to the class.</p>
+          <ul style="display:grid;gap:8px;">
+            <li style="list-style:none;padding-left:17px;position:relative;font-size:14px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Build an absorption-costing statement as a team</li>
+            <li style="list-style:none;padding-left:17px;position:relative;font-size:14px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Jigsaw the five costing methods, one per group</li>
+            <li style="list-style:none;padding-left:17px;position:relative;font-size:14px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Peer-review another team's variance analysis</li>
+          </ul>
+          <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:7px;padding-top:6px;">
+            <span style="font-size:12px;font-weight:600;color:#6b7480;background:#f3f1ea;border:1px solid #e6e2d6;border-radius:999px;padding:5px 11px;">Teams of 3–4</span>
+            <span style="font-size:12px;font-weight:600;color:#6b7480;background:#f3f1ea;border:1px solid #e6e2d6;border-radius:999px;padding:5px 11px;">25–40 min</span>
+          </div>
+        </article>
+
+        <!-- Case Studies -->
+        <article style="background:#fff;border:1px solid #e4e0d6;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:15px;">
+          <div style="display:flex;align-items:center;gap:14px;">
+            <span style="flex-shrink:0;width:48px;height:48px;border-radius:12px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">CS</span>
+            <div>
+              <p style="margin:0 0 3px;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9a9686;">Applied</p>
+              <h3 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:20px;color:#16293f;">Case Studies</h3>
+            </div>
+          </div>
+          <p style="margin:0;font-size:14.5px;line-height:1.6;color:#4a5560;">Work a realistic business scenario end-to-end — from the numbers to a clear recommendation for management.</p>
+          <ul style="display:grid;gap:8px;">
+            <li style="list-style:none;padding-left:17px;position:relative;font-size:14px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Price a new product for a start-up café</li>
+            <li style="list-style:none;padding-left:17px;position:relative;font-size:14px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Advise a factory on a make-or-buy decision</li>
+            <li style="list-style:none;padding-left:17px;position:relative;font-size:14px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Assess a small business's bank-finance request</li>
+          </ul>
+          <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:7px;padding-top:6px;">
+            <span style="font-size:12px;font-weight:600;color:#6b7480;background:#f3f1ea;border:1px solid #e6e2d6;border-radius:999px;padding:5px 11px;">Chapters 15–22</span>
+            <span style="font-size:12px;font-weight:600;color:#6b7480;background:#f3f1ea;border:1px solid #e6e2d6;border-radius:999px;padding:5px 11px;">Pairs or solo</span>
+          </div>
+        </article>
+
+        <!-- Gamification -->
+        <article style="background:#fff;border:1px solid #e4e0d6;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:15px;">
+          <div style="display:flex;align-items:center;gap:14px;">
+            <span style="flex-shrink:0;width:48px;height:48px;border-radius:12px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">GM</span>
+            <div>
+              <p style="margin:0 0 3px;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9a9686;">Competitive</p>
+              <h3 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:20px;color:#16293f;">Gamification</h3>
+            </div>
+          </div>
+          <p style="margin:0;font-size:14.5px;line-height:1.6;color:#4a5560;">Turn practice into play with points, timers and a leaderboard — recall and speed under a bit of friendly pressure.</p>
+          <ul style="display:grid;gap:8px;">
+            <li style="list-style:none;padding-left:17px;position:relative;font-size:14px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>"Variance Detective" spot-the-error race</li>
+            <li style="list-style:none;padding-left:17px;position:relative;font-size:14px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Live quiz rounds with a class leaderboard</li>
+            <li style="list-style:none;padding-left:17px;position:relative;font-size:14px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>EOQ &amp; break-even speed challenge</li>
+          </ul>
+          <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:7px;padding-top:6px;">
+            <span style="font-size:12px;font-weight:600;color:#6b7480;background:#f3f1ea;border:1px solid #e6e2d6;border-radius:999px;padding:5px 11px;">Whole class</span>
+            <span style="font-size:12px;font-weight:600;color:#6b7480;background:#f3f1ea;border:1px solid #e6e2d6;border-radius:999px;padding:5px 11px;">10–20 min</span>
+          </div>
+        </article>
+
+        <!-- Problem-Solving -->
+        <article style="background:#fff;border:1px solid #e4e0d6;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:15px;">
+          <div style="display:flex;align-items:center;gap:14px;">
+            <span style="flex-shrink:0;width:48px;height:48px;border-radius:12px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">PS</span>
+            <div>
+              <p style="margin:0 0 3px;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9a9686;">Hands-on</p>
+              <h3 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:20px;color:#16293f;">Problem-Solving Exercises</h3>
+            </div>
+          </div>
+          <p style="margin:0;font-size:14.5px;line-height:1.6;color:#4a5560;">Structured, exam-style calculations worked step by step, with instant discussion of method and common mistakes.</p>
+          <ul style="display:grid;gap:8px;">
+            <li style="list-style:none;padding-left:17px;position:relative;font-size:14px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Timed break-even &amp; margin-of-safety drills</li>
+            <li style="list-style:none;padding-left:17px;position:relative;font-size:14px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Process-costing loss and gain problems</li>
+            <li style="list-style:none;padding-left:17px;position:relative;font-size:14px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>NPV vs payback investment comparisons</li>
+          </ul>
+          <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:7px;padding-top:6px;">
+            <span style="font-size:12px;font-weight:600;color:#6b7480;background:#f3f1ea;border:1px solid #e6e2d6;border-radius:999px;padding:5px 11px;">All chapters</span>
+            <span style="font-size:12px;font-weight:600;color:#6b7480;background:#f3f1ea;border:1px solid #e6e2d6;border-radius:999px;padding:5px 11px;">15–30 min</span>
+          </div>
+        </article>
+
+        <!-- Peer Teaching -->
+        <article style="background:#fff;border:1px solid #e4e0d6;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:15px;">
+          <div style="display:flex;align-items:center;gap:14px;">
+            <span style="flex-shrink:0;width:48px;height:48px;border-radius:12px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">PT</span>
+            <div>
+              <p style="margin:0 0 3px;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9a9686;">Explain</p>
+              <h3 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:20px;color:#16293f;">Peer Teaching</h3>
+            </div>
+          </div>
+          <p style="margin:0;font-size:14.5px;line-height:1.6;color:#4a5560;">Students explain a concept to one another — think-pair-share and teach-backs that expose gaps and lock in understanding.</p>
+          <ul style="display:grid;gap:8px;">
+            <li style="list-style:none;padding-left:17px;position:relative;font-size:14px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Explain FIFO vs AVCO to a partner</li>
+            <li style="list-style:none;padding-left:17px;position:relative;font-size:14px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>One-minute "teach-back" of a key formula</li>
+            <li style="list-style:none;padding-left:17px;position:relative;font-size:14px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Swap and error-hunt each other's workings</li>
+          </ul>
+          <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:7px;padding-top:6px;">
+            <span style="font-size:12px;font-weight:600;color:#6b7480;background:#f3f1ea;border:1px solid #e6e2d6;border-radius:999px;padding:5px 11px;">Pairs</span>
+            <span style="font-size:12px;font-weight:600;color:#6b7480;background:#f3f1ea;border:1px solid #e6e2d6;border-radius:999px;padding:5px 11px;">10–15 min</span>
+          </div>
+        </article>
+
+        <!-- Simulations & Role-Play -->
+        <article style="background:#fff;border:1px solid #e4e0d6;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:15px;">
+          <div style="display:flex;align-items:center;gap:14px;">
+            <span style="flex-shrink:0;width:48px;height:48px;border-radius:12px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;">SR</span>
+            <div>
+              <p style="margin:0 0 3px;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9a9686;">Immersive</p>
+              <h3 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:20px;color:#16293f;">Simulations &amp; Role-Play</h3>
+            </div>
+          </div>
+          <p style="margin:0;font-size:14.5px;line-height:1.6;color:#4a5560;">Take on real roles and make decisions under realistic constraints, then defend them to the "board".</p>
+          <ul style="display:grid;gap:8px;">
+            <li style="list-style:none;padding-left:17px;position:relative;font-size:14px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Budget-committee negotiation</li>
+            <li style="list-style:none;padding-left:17px;position:relative;font-size:14px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Treasury team investing surplus cash</li>
+            <li style="list-style:none;padding-left:17px;position:relative;font-size:14px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Cost accountant advising the board</li>
+          </ul>
+          <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:7px;padding-top:6px;">
+            <span style="font-size:12px;font-weight:600;color:#6b7480;background:#f3f1ea;border:1px solid #e6e2d6;border-radius:999px;padding:5px 11px;">Groups</span>
+            <span style="font-size:12px;font-weight:600;color:#6b7480;background:#f3f1ea;border:1px solid #e6e2d6;border-radius:999px;padding:5px 11px;">30–45 min</span>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Callout -->
+      <div style="margin-top:clamp(36px,5vw,52px);background:#16293f;border-radius:16px;padding:clamp(24px,3vw,32px);display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:240px;">
+          <h4 style="margin:0 0 8px;font-family:'Schibsted Grotesk';font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);">Have an idea for an activity?</h4>
+          <p style="margin:0 0 4px;font-family:'Schibsted Grotesk';font-weight:700;font-size:clamp(19px,2.4vw,23px);line-height:1.3;color:#f5f4ef;">Tell me what would make class better</p>
+          <p style="margin:0;font-size:14.5px;line-height:1.6;color:#9fb0c0;">These activities evolve with the class. Suggest a game, case or format you'd enjoy and we'll try it.</p>
+        </div>
+        <a href="mailto:mudam@cam-ed.com?subject=Active%20Learning%20idea" style="flex-shrink:0;display:inline-flex;align-items:center;gap:9px;background:var(--accent);color:#16293f;text-decoration:none;font-family:'Schibsted Grotesk';font-weight:700;font-size:15px;padding:13px 22px;border-radius:11px;transition:transform .15s;" style-hover="transform:translateY(-2px);">Share an idea →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:#16293f;color:#cdd5dd;">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(44px,6vw,68px) clamp(18px,5vw,48px) 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:36px;">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;"><span style="background:var(--accent);color:#16293f;font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;padding:6px 9px;border-radius:6px;">ACCT 221</span><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:15px;color:#f5f4ef;">Management Accounting 1</span></div>
+        <p style="margin:0;font-size:13.5px;line-height:1.6;color:#9fb0c0;max-width:34ch;">Second-year Foundations in Accountancy. Costing, decision-making and cash management for internal reporting.</p>
+      </div>
+      <div>
+        <p style="margin:0 0 14px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#7e90a2;">Navigate</p>
+        <div style="display:grid;gap:9px;">
+          <a href="Management Accounting Hub.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">Home</a>
+          <a href="Syllabus.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">Syllabus &amp; Schedule</a>
+          <a href="Study Hub.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">Study Reference Hub</a>
+          <a href="Exercises.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">Exercises</a>
+          <a href="About Lecturer.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">About the Lecturer</a>
+          <a href="Active Learning.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">Active Learning</a>
+          <a href="MA2 Chatbot.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">MA2 Chatbot</a>
+        </div>
+      </div>
+      <div>
+        <p style="margin:0 0 14px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#7e90a2;">Contact</p>
+        <div style="display:grid;gap:9px;font-size:14px;line-height:1.5;">
+          <span style="color:#f5f4ef;font-weight:600;">Mean Udam, MSc, ACCA</span>
+          <a href="mailto:mudam@cam-ed.com" style="text-decoration:none;color:var(--accent);font-weight:600;transition:color .15s;" style-hover="color:#c79e5b;">mudam@cam-ed.com</a>
+          <span style="color:#9fb0c0;">CamEd Business School</span>
+          <span style="color:#9fb0c0;">Term: July – December 2026</span>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.1);">
+      <div style="max-width:1180px;margin:0 auto;padding:18px clamp(18px,5vw,48px);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:12.5px;color:#7e90a2;">
+        <span>© 2026 Management Accounting 1 · ACCT 221</span>
+        <span>Course hub · syllabus · study reference · exercises</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Present overlays ===== -->
+  <sc-if value="{{ timerPresent }}" hint-placeholder-val="{{ false }}">
+    <div ref="{{ setTimerStage }}" style="position:fixed;inset:0;z-index:1000;background:#16293f;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;padding:40px;">
+      <div style="font-family:'Schibsted Grotesk';font-weight:800;font-size:clamp(96px,25vw,340px);line-height:0.9;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;color: {{ timerStageColor }};">{{ timerDisplay }}</div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;">
+        <button onClick="{{ startPauseTimer }}" style="border:none;background:#f5f4ef;color:#16293f;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;padding:14px 32px;border-radius:12px;cursor:pointer;">{{ timerBtnLabel }}</button>
+        <button onClick="{{ resetTimer }}" style="border:1px solid rgba(255,255,255,0.4);background:transparent;color:#f5f4ef;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;padding:14px 26px;border-radius:12px;cursor:pointer;">Reset</button>
+      </div>
+      <button onClick="{{ closeTimer }}" style="position:absolute;top:24px;right:26px;border:1px solid rgba(255,255,255,0.4);background:rgba(255,255,255,0.12);color:#f5f4ef;font-family:'Public Sans';font-weight:600;font-size:15px;padding:9px 18px;border-radius:10px;cursor:pointer;">✕ Exit</button>
+    </div>
+  </sc-if>
+  <sc-if value="{{ signalPresent }}" hint-placeholder-val="{{ false }}">
+    <div ref="{{ setSignalStage }}" style="position:fixed;inset:0;z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:40px;text-align:center;background: {{ signalBg }};">
+      <span style="font-family:'Schibsted Grotesk';font-weight:800;font-size:clamp(64px,16vw,190px);line-height:0.92;letter-spacing:-0.02em;color: {{ signalFg }};">{{ signalLabel }}</span>
+      <span style="font-size:clamp(18px,3vw,30px);font-weight:600;max-width:24ch;opacity:.92;color: {{ signalFg }};">{{ signalSub }}</span>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:14px;">
+        <sc-for list="{{ signalLights }}" as="s" hint-placeholder-count="3">
+          <button onClick="{{ s.on }}" style="border:1px solid {{ s.pillBorder }};background: {{ s.pillBg }};color: {{ signalFg }};font-family:'Schibsted Grotesk';font-weight:700;font-size:16px;padding:12px 24px;border-radius:12px;cursor:pointer;">{{ s.label }}</button>
+        </sc-for>
+      </div>
+      <button onClick="{{ closeSignal }}" style="position:absolute;top:24px;right:26px;border:1px solid rgba(255,255,255,0.45);background:rgba(255,255,255,0.15);color: {{ signalFg }};font-family:'Public Sans';font-weight:600;font-size:15px;padding:9px 18px;border-radius:10px;cursor:pointer;">✕ Exit</button>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#b08d4f&quot;,&quot;options&quot;:[&quot;#b08d4f&quot;,&quot;#1f7a6d&quot;,&quot;#8c2f39&quot;,&quot;#3a6ea5&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Appearance&quot;}}">
+class Component extends DCLogic {
+  state = { activeSection: 'active', names: [], winner: null, spinning: false, removeAfter: false, gmode: 'count', groups: [], timerLeft: 300, timerTotal: 300, timerRunning: false, timerDone: false, rollResult: null, rolling: false, teams: [], timerPresent: false, signal: 'green', signalPresent: false };
+  KEY = 'al_spinner_names_v1';
+  rotation = 0;
+  PALETTE = [
+    { bg: '#16293f', fg: '#f5f4ef' },
+    { bg: '#b08d4f', fg: '#1c1206' },
+    { bg: '#2f4a63', fg: '#f5f4ef' },
+    { bg: '#c7a35f', fg: '#1c1206' },
+    { bg: '#3a4550', fg: '#f5f4ef' },
+    { bg: '#8a6a34', fg: '#f5f4ef' }
+  ];
+
+  componentDidMount() {
+    this.applyTweaks(); this.paintNav(); this.paintGmode();
+    this._onKey = (e) => { if (e.key === 'Escape') { if (this.state.timerPresent) this.closeTimer(); if (this.state.signalPresent) this.closeSignal(); } };
+    document.addEventListener('keydown', this._onKey);
+    this._onFs = () => { if (!document.fullscreenElement && this._fsActive) { this._fsActive = false; this.setState({ timerPresent: false, signalPresent: false }); } };
+    document.addEventListener('fullscreenchange', this._onFs);
+    let saved = [];
+    try { saved = JSON.parse(localStorage.getItem(this.KEY) || '[]'); } catch (e) { saved = []; }
+    if (!Array.isArray(saved)) saved = [];
+    this.setState({ names: saved }, () => {
+      if (this.area) this.area.value = saved.join('\n');
+      this.draw();
+    });
+  }
+  componentDidUpdate() { this.applyTweaks(); this.paintNav(); this.paintGmode(); }
+  componentWillUnmount() { if (this._raf) cancelAnimationFrame(this._raf); if (this._timerInt) clearInterval(this._timerInt); if (this._rollInt) clearInterval(this._rollInt); document.removeEventListener('keydown', this._onKey); document.removeEventListener('fullscreenchange', this._onFs); }
+
+  applyTweaks() { if (!this.rootEl) return; this.rootEl.style.setProperty('--accent', this.props.accent || '#b08d4f'); }
+  paintNav() {
+    if (!this.rootEl) return;
+    this.rootEl.querySelectorAll('[data-nav]').forEach((a) => {
+      const active = a.getAttribute('data-nav') === this.state.activeSection;
+      a.style.color = active ? 'var(--accent-deep)' : '#3a4550';
+      a.style.background = active ? 'rgba(176,141,79,0.12)' : 'transparent';
+    });
+  }
+
+  // ----- refs (stable) -----
+  setRoot = (el) => { this.rootEl = el; };
+  setCanvas = (el) => { this.canvas = el; if (el) this.draw(); };
+  setNamesArea = (el) => { this.area = el; if (el && this.state.names && this.state.names.length) el.value = this.state.names.join('\n'); };
+
+  // ----- data helpers -----
+  parse(text) { return String(text || '').split(/[\r\n,]+/).map((s) => s.trim()).filter(Boolean); }
+  save() { try { localStorage.setItem(this.KEY, JSON.stringify(this.state.names)); } catch (e) {} }
+  applyNames(arr) { this.setState({ names: arr, winner: null }, () => { this.save(); this.rotation = 0; this.draw(); }); }
+  loadNames = () => { if (this.area) this.applyNames(this.parse(this.area.value)); };
+  clearNames = () => { if (this.area) this.area.value = ''; this.setState({ names: [], winner: null }, () => { this.save(); this.rotation = 0; this.draw(); }); };
+  toggleRemove = (e) => { this.setState({ removeAfter: e.target.checked }); };
+  // Turn tabular rows (array of cell-arrays) into a clean list of student names.
+  extractNames(rows) {
+    if (!Array.isArray(rows)) return [];
+    const hasLetters = (c) => /[a-zA-Z\u00C0-\u024F\u1E00-\u1EFF\u1780-\u17FF]/.test(c);
+    const headerCell = (c) => /^(no\.?|#|id)$/i.test(c) ||
+      /(^|\W)(names?|students?|fullname|full\s?name|first\s?name|last\s?name|firstname|lastname|number|e-?mail|gender|sex|class|group|section|program|major|phone|contact|nationality)(\W|$)/i.test(' ' + c + ' ');
+    const isHeaderRow = (row) => {
+      const nonEmpty = (row || []).map((c) => String(c == null ? '' : c).trim()).filter(Boolean);
+      return nonEmpty.length > 0 && nonEmpty.every((c) => headerCell(c));
+    };
+    const start = rows.length && isHeaderRow(rows[0]) ? 1 : 0;
+    const names = [];
+    for (let r = start; r < rows.length; r++) {
+      const cells = (rows[r] || []).map((c) => String(c == null ? '' : c).trim());
+      const parts = cells.filter((c) => c && hasLetters(c) && !/@/.test(c) && !/^\d+$/.test(c));
+      const name = parts.join(' ').replace(/\s+/g, ' ').trim();
+      if (name) names.push(name);
+    }
+    return names;
+  }
+  onUpload = (e) => {
+    const input = e.target;
+    const file = input.files && input.files[0];
+    if (!file) return;
+    const fname = (file.name || '').toLowerCase();
+    const reader = new FileReader();
+    const finish = (names) => {
+      if (this.area) this.area.value = names.join('\n');
+      this.applyNames(names);
+      input.value = '';
+    };
+    if (/\.(xlsx|xls)$/.test(fname) && window.XLSX) {
+      reader.onload = () => {
+        try {
+          const wb = XLSX.read(new Uint8Array(reader.result), { type: 'array' });
+          const sheet = wb.Sheets[wb.SheetNames[0]];
+          const rows = XLSX.utils.sheet_to_json(sheet, { header: 1, blankrows: false, defval: '' });
+          finish(this.extractNames(rows));
+        } catch (err) { finish([]); }
+      };
+      reader.readAsArrayBuffer(file);
+    } else {
+      reader.onload = () => {
+        const text = String(reader.result || '');
+        const delim = /\.csv$/.test(fname) ? /[,;\t]/ : null;
+        const rows = text.split(/\r\n|\r|\n/).map((line) => (delim ? line.split(delim) : [line]));
+        finish(this.extractNames(rows));
+      };
+      reader.readAsText(file);
+    }
+  };
+  countLabel() {
+    const n = (this.state.names || []).length;
+    if (n === 0) return 'No students yet — add your class list';
+    return n + (n === 1 ? ' student on the wheel' : ' students on the wheel');
+  }
+
+  // ----- group maker -----
+  setGroupInput = (el) => { this.groupInput = el; };
+  paintGmode() {
+    if (!this.rootEl) return;
+    this.rootEl.querySelectorAll('[data-gmode]').forEach((b) => {
+      const active = b.getAttribute('data-gmode') === this.state.gmode;
+      b.style.background = active ? '#16293f' : '#fff';
+      b.style.color = active ? '#f5f4ef' : '#16293f';
+    });
+  }
+  setModeCount = () => { this.setState({ gmode: 'count' }, () => this.paintGmode()); };
+  setModeSize = () => { this.setState({ gmode: 'size' }, () => this.paintGmode()); };
+  groupNLabel() { return this.state.gmode === 'count' ? 'How many groups?' : 'Students per group'; }
+  makeGroups = () => {
+    const src = (this.state.names || []).slice();
+    if (!src.length) { this.setState({ groups: [] }); return; }
+    // Fisher–Yates shuffle
+    for (let i = src.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const t = src[i]; src[i] = src[j]; src[j] = t;
+    }
+    let raw = this.groupInput ? parseInt(this.groupInput.value, 10) : 4;
+    if (!raw || raw < 1) raw = 1;
+    let buckets;
+    if (this.state.gmode === 'count') {
+      const g = Math.min(raw, src.length);
+      buckets = Array.from({ length: g }, () => []);
+      src.forEach((name, i) => { buckets[i % g].push(name); }); // round-robin = balanced
+    } else {
+      const size = raw;
+      const g = Math.ceil(src.length / size);
+      buckets = Array.from({ length: g }, () => []);
+      src.forEach((name, i) => { buckets[Math.floor(i / size)].push(name); });
+    }
+    const groups = buckets.map((members, i) => ({
+      title: 'Group ' + (i + 1),
+      count: members.length + (members.length === 1 ? ' member' : ' members'),
+      members
+    }));
+    this.setState({ groups });
+  };
+  groupCountLabel() {
+    const n = (this.state.names || []).length;
+    const g = (this.state.groups || []).length;
+    if (n === 0) return 'No students yet — upload or add a class list on the wheel above';
+    const base = n + (n === 1 ? ' student' : ' students') + ' in the class list';
+    return g ? base + ' · ' + g + (g === 1 ? ' group' : ' groups') + ' created' : base;
+  }
+  clearGroups = () => { this.setState({ groups: [] }); };
+
+  // ----- toolkit: countdown timer -----
+  fmt(s) { s = Math.max(0, Math.round(s)); const m = Math.floor(s / 60), ss = s % 60; return m + ':' + String(ss).padStart(2, '0'); }
+  timerDisplay() { return this.fmt(this.state.timerLeft); }
+  timerColor() { if (this.state.timerDone) return '#8c2f39'; if (this.state.timerRunning && this.state.timerLeft <= 10) return '#97743a'; return '#16293f'; }
+  timerPctStyle() { const t = this.state.timerTotal || 1; return Math.max(0, Math.min(100, (this.state.timerLeft / t) * 100)) + '%'; }
+  timerBtnLabel() { return this.state.timerRunning ? 'Pause' : 'Start'; }
+  setTimerMin = (el) => { this.timerMinInput = el; };
+  stopTimerInt() { if (this._timerInt) { clearInterval(this._timerInt); this._timerInt = null; } }
+  setTimer(sec) { this.stopTimerInt(); this.setState({ timerTotal: sec, timerLeft: sec, timerRunning: false, timerDone: false }); }
+  setCustomTimer = () => { const v = this.timerMinInput ? parseFloat(this.timerMinInput.value) : 5; const sec = Math.max(1, Math.round((v || 5) * 60)); this.setTimer(sec); };
+  tickTimer() {
+    this.setState((s) => {
+      const left = s.timerLeft - 1;
+      if (left <= 0) { this.stopTimerInt(); this.beep(); return { timerLeft: 0, timerRunning: false, timerDone: true }; }
+      return { timerLeft: left };
+    });
+  }
+  startPauseTimer = () => {
+    if (this.state.timerRunning) { this.stopTimerInt(); this.setState({ timerRunning: false }); return; }
+    if (this.state.timerLeft <= 0) return;
+    this.setState({ timerRunning: true, timerDone: false });
+    this._timerInt = setInterval(() => this.tickTimer(), 1000);
+  };
+  resetTimer = () => { this.stopTimerInt(); this.setState((s) => ({ timerLeft: s.timerTotal, timerRunning: false, timerDone: false })); };
+  beep() {
+    try {
+      const AC = window.AudioContext || window.webkitAudioContext; if (!AC) return;
+      const ctx = new AC();
+      for (let i = 0; i < 3; i++) {
+        const o = ctx.createOscillator(), g = ctx.createGain(); o.connect(g); g.connect(ctx.destination);
+        o.type = 'sine'; o.frequency.value = 880; const t0 = ctx.currentTime + i * 0.28;
+        g.gain.setValueAtTime(0.0001, t0); g.gain.exponentialRampToValueAtTime(0.28, t0 + 0.02); g.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.22);
+        o.start(t0); o.stop(t0 + 0.24);
+      }
+    } catch (e) {}
+  }
+
+  // ----- toolkit: random number -----
+  setRollMin = (el) => { this.rollMinInput = el; };
+  setRollMax = (el) => { this.rollMaxInput = el; };
+  rollDisplay() { return this.state.rollResult == null ? '?' : String(this.state.rollResult); }
+  roll = () => {
+    if (this.state.rolling) return;
+    let lo = this.rollMinInput ? parseInt(this.rollMinInput.value, 10) : 1;
+    let hi = this.rollMaxInput ? parseInt(this.rollMaxInput.value, 10) : 20;
+    if (isNaN(lo)) lo = 1; if (isNaN(hi)) hi = 20; if (hi < lo) { const t = lo; lo = hi; hi = t; }
+    const pick = () => lo + Math.floor(Math.random() * (hi - lo + 1));
+    this.setState({ rolling: true });
+    let n = 0; const total = 14;
+    if (this._rollInt) clearInterval(this._rollInt);
+    this._rollInt = setInterval(() => {
+      n++;
+      if (n >= total) { clearInterval(this._rollInt); this._rollInt = null; this.setState({ rollResult: pick(), rolling: false }); }
+      else { this.setState({ rollResult: pick() }); }
+    }, 70);
+  };
+
+  // ----- toolkit: team scoreboard -----
+  setTeamInput = (el) => { this.teamInput = el; };
+  addTeam = () => {
+    const v = this.teamInput ? this.teamInput.value.trim() : '';
+    if (!v) return;
+    this.setState((s) => ({ teams: s.teams.concat([{ id: 't' + Date.now() + Math.random().toString(36).slice(2, 6), name: v, score: 0 }]) }), () => { if (this.teamInput) this.teamInput.value = ''; });
+  };
+  teamKey = (e) => { if (e.key === 'Enter') { e.preventDefault(); this.addTeam(); } };
+  adjust(id, d) { this.setState((s) => ({ teams: s.teams.map((t) => t.id === id ? { ...t, score: Math.max(0, t.score + d) } : t) })); }
+  removeTeam(id) { this.setState((s) => ({ teams: s.teams.filter((t) => t.id !== id) })); }
+  resetScores = () => { this.setState((s) => ({ teams: s.teams.map((t) => ({ ...t, score: 0 })) })); };
+  loadTeamsFromGroups = () => {
+    const g = this.state.groups || []; if (!g.length) return;
+    this.setState({ teams: g.map((x, i) => ({ id: 'g' + i + '_' + Date.now(), name: x.title, score: 0 })) });
+  };
+  teamRows() {
+    const teams = this.state.teams || [];
+    const max = teams.reduce((m, t) => Math.max(m, t.score), 0);
+    return teams.slice().sort((a, b) => b.score - a.score).map((t) => ({
+      id: t.id, name: t.name, score: t.score, isLeader: max > 0 && t.score === max,
+      inc: () => this.adjust(t.id, 1), inc5: () => this.adjust(t.id, 5), dec: () => this.adjust(t.id, -1), del: () => this.removeTeam(t.id)
+    }));
+  }
+
+  // ----- toolkit: present mode + attention signal -----
+  SIGNALS = {
+    green: { bg: '#1f8a5b', fg: '#f5f4ef', label: 'Work', sub: 'Heads down \u2014 keep working', glow: 'rgba(31,138,91,0.22)' },
+    amber: { bg: '#d19a3c', fg: '#1c1206', label: 'Wrap up', sub: 'About two minutes left \u2014 start wrapping up', glow: 'rgba(209,154,60,0.28)' },
+    red:   { bg: '#8c2f39', fg: '#f7e9ea', label: 'Stop', sub: 'Pens down \u2014 eyes up front', glow: 'rgba(140,47,57,0.24)' }
+  };
+  ORDER = ['green', 'amber', 'red'];
+  enterFs(el) { try { if (el && el.requestFullscreen) { this._fsActive = true; const p = el.requestFullscreen(); if (p && p.catch) p.catch(() => { this._fsActive = false; }); } } catch (e) {} }
+  exitFs() { try { if (document.fullscreenElement) document.exitFullscreen(); } catch (e) {} this._fsActive = false; }
+  presentTimer = () => { this.setState({ timerPresent: true }); };
+  setTimerStage = (el) => { if (el) { this.timerStageEl = el; this.enterFs(el); } };
+  closeTimer = () => { this.exitFs(); this.setState({ timerPresent: false }); };
+  timerStageColor() { if (this.state.timerDone) return '#f2b2b9'; if (this.state.timerRunning && this.state.timerLeft <= 10) return '#eecb8b'; return '#f5f4ef'; }
+  setSignal = (k) => { this.setState({ signal: k }); };
+  currentSignal() { return this.SIGNALS[this.state.signal] || this.SIGNALS.green; }
+  signalLights() {
+    return this.ORDER.map((k) => {
+      const active = this.state.signal === k; const c = this.SIGNALS[k];
+      return {
+        key: k, label: c.label, on: () => this.setSignal(k),
+        dot: active ? c.bg : '#e0dccf', glow: active ? ('0 0 0 5px ' + c.glow) : 'none', text: active ? '#16293f' : '#9a9686',
+        pillBg: active ? 'rgba(255,255,255,0.30)' : 'rgba(255,255,255,0.12)', pillBorder: active ? 'rgba(255,255,255,0.75)' : 'rgba(255,255,255,0.28)'
+      };
+    });
+  }
+  presentSignal = () => { this.setState({ signalPresent: true }); };
+  setSignalStage = (el) => { if (el) { this.signalStageEl = el; this.enterFs(el); } };
+  closeSignal = () => { this.exitFs(); this.setState({ signalPresent: false }); };
+
+  // ----- drawing -----
+  drawHub(ctx, cx, cy) {
+    ctx.beginPath(); ctx.arc(cx, cy, 36, 0, 2 * Math.PI);
+    ctx.fillStyle = '#fff'; ctx.fill();
+    ctx.lineWidth = 5; ctx.strokeStyle = '#16293f'; ctx.stroke();
+  }
+  draw() {
+    const c = this.canvas; if (!c) return;
+    const ctx = c.getContext('2d');
+    const W = c.width, H = c.height, cx = W / 2, cy = H / 2, r = Math.min(cx, cy) - 8;
+    ctx.clearRect(0, 0, W, H);
+    const names = this.state.names || [];
+    const n = names.length;
+    if (n === 0) {
+      ctx.beginPath(); ctx.arc(cx, cy, r, 0, 2 * Math.PI); ctx.fillStyle = '#f0eee5'; ctx.fill();
+      ctx.strokeStyle = '#e0dccf'; ctx.lineWidth = 3; ctx.stroke();
+      ctx.fillStyle = '#9a9686'; ctx.font = "600 30px 'Public Sans', sans-serif";
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText('Add names', cx, cy);
+      this.drawHub(ctx, cx, cy);
+      return;
+    }
+    const seg = 2 * Math.PI / n, rot = this.rotation || 0;
+    const fs = Math.max(15, Math.min(30, Math.floor(150 / Math.max(2, n)) + 14));
+    for (let i = 0; i < n; i++) {
+      const a0 = i * seg + rot, a1 = a0 + seg;
+      ctx.beginPath(); ctx.moveTo(cx, cy); ctx.arc(cx, cy, r, a0, a1); ctx.closePath();
+      const p = this.PALETTE[i % this.PALETTE.length];
+      ctx.fillStyle = p.bg; ctx.fill();
+      ctx.strokeStyle = 'rgba(255,255,255,0.55)'; ctx.lineWidth = 2; ctx.stroke();
+      ctx.save();
+      ctx.translate(cx, cy); ctx.rotate(a0 + seg / 2);
+      ctx.fillStyle = p.fg; ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
+      ctx.font = '700 ' + fs + "px 'Public Sans', sans-serif";
+      let label = names[i]; if (label.length > 16) label = label.slice(0, 15) + '…';
+      ctx.fillText(label, r - 20, 0);
+      ctx.restore();
+    }
+    this.drawHub(ctx, cx, cy);
+  }
+
+  // ----- spin -----
+  spin = () => {
+    const names = this.state.names || [];
+    if (names.length < 1 || this.state.spinning) return;
+    const n = names.length, seg = 2 * Math.PI / n, twoPi = 2 * Math.PI;
+    const winner = Math.floor(Math.random() * n);
+    const target = -Math.PI / 2; // pointer at top
+    let end = (target - (winner * seg + seg / 2)) % twoPi;
+    const base = this.rotation || 0;
+    const turns = 6;
+    while (end < base + turns * twoPi) end += twoPi;
+    const start = base, dur = 4200, t0 = performance.now();
+    const ease = (x) => 1 - Math.pow(1 - x, 3);
+    this.setState({ spinning: true, winner: null });
+    const frame = (t) => {
+      const p = Math.min(1, (t - t0) / dur);
+      this.rotation = start + (end - start) * ease(p);
+      this.draw();
+      if (p < 1) { this._raf = requestAnimationFrame(frame); }
+      else { this.rotation = end; this.draw(); this.finishSpin(names[winner], winner); }
+    };
+    this._raf = requestAnimationFrame(frame);
+  };
+  finishSpin(name, idx) {
+    if (this.state.removeAfter) {
+      const names = this.state.names.slice(); names.splice(idx, 1);
+      this.setState({ spinning: false, winner: name, names }, () => {
+        if (this.area) this.area.value = this.state.names.join('\n');
+        this.save(); this.draw();
+      });
+    } else {
+      this.setState({ spinning: false, winner: name });
+    }
+  }
+
+  renderVals() {
+    return {
+      setRoot: this.setRoot,
+      setCanvas: this.setCanvas,
+      setNamesArea: this.setNamesArea,
+      spin: this.spin,
+      loadNames: this.loadNames,
+      onUpload: this.onUpload,
+      clearNames: this.clearNames,
+      toggleRemove: this.toggleRemove,
+      spinning: this.state.spinning,
+      winner: this.state.winner,
+      hasWinner: !!this.state.winner,
+      countLabel: this.countLabel(),
+      setModeCount: this.setModeCount,
+      setModeSize: this.setModeSize,
+      setGroupInput: this.setGroupInput,
+      makeGroups: this.makeGroups,
+      groupNLabel: this.groupNLabel(),
+      groupCountLabel: this.groupCountLabel(),
+      groups: this.state.groups,
+      hasGroups: (this.state.groups || []).length > 0,
+      clearGroups: this.clearGroups,
+      // timer
+      timerDisplay: this.timerDisplay(),
+      timerColor: this.timerColor(),
+      timerPctStyle: this.timerPctStyle(),
+      timerBtnLabel: this.timerBtnLabel(),
+      setTimerMin: this.setTimerMin,
+      setCustomTimer: this.setCustomTimer,
+      startPauseTimer: this.startPauseTimer,
+      resetTimer: this.resetTimer,
+      timerPresets: [1, 3, 5, 10, 15, 20].map((m) => ({ label: m + 'm', on: () => this.setTimer(m * 60) })),
+      // roller
+      setRollMin: this.setRollMin,
+      setRollMax: this.setRollMax,
+      roll: this.roll,
+      rolling: this.state.rolling,
+      rollDisplay: this.rollDisplay(),
+      // scoreboard
+      setTeamInput: this.setTeamInput,
+      addTeam: this.addTeam,
+      teamKey: this.teamKey,
+      resetScores: this.resetScores,
+      loadTeamsFromGroups: this.loadTeamsFromGroups,
+      teamRows: this.teamRows(),
+      hasTeams: (this.state.teams || []).length > 0,
+      noTeams: (this.state.teams || []).length === 0,
+      // present mode + attention signal
+      presentTimer: this.presentTimer,
+      closeTimer: this.closeTimer,
+      timerPresent: this.state.timerPresent,
+      setTimerStage: this.setTimerStage,
+      timerStageColor: this.timerStageColor(),
+      signalLights: this.signalLights(),
+      signalLabel: this.currentSignal().label,
+      signalSub: this.currentSignal().sub,
+      signalBg: this.currentSignal().bg,
+      signalFg: this.currentSignal().fg,
+      presentSignal: this.presentSignal,
+      closeSignal: this.closeSignal,
+      signalPresent: this.state.signalPresent,
+      setSignalStage: this.setSignalStage
+    };
+  }
+}
+</script>
+</body>
+</html>

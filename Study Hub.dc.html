@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Schibsted+Grotesk:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#f5f4ef;color:#3a4550;font-family:'Public Sans',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  ::selection{background:rgba(176,141,79,0.25);}
+  ul{margin:0;padding:0;}
+  @keyframes ma2spin{to{transform:rotate(360deg);}}
+</style>
+</helmet>
+<div ref="{{ setRoot }}" style="--accent:#b08d4f;--accent-deep:#97743a;--accent-soft:#f3ead8;min-height:100vh;">
+
+  <!-- ============ NAV ============ -->
+  <header style="position:sticky;top:0;z-index:50;background:rgba(245,244,239,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #e4e0d6;">
+    <nav style="max-width:1180px;margin:0 auto;padding:13px clamp(18px,5vw,48px);display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;">
+      <a href="Management Accounting Hub.dc.html" style="display:flex;align-items:center;gap:11px;text-decoration:none;flex-shrink:0;">
+        <span style="background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-weight:700;font-size:13px;letter-spacing:.03em;padding:7px 10px;border-radius:7px;">ACCT 221</span>
+        <span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:16px;color:#16293f;letter-spacing:-0.01em;">Management Accounting 1</span>
+      </a>
+      <div style="display:flex;gap:4px;flex-wrap:wrap;align-items:center;">
+        <a data-nav="home" href="Management Accounting Hub.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">Home</a>
+        <a data-nav="syllabus" href="Syllabus.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">Syllabus</a>
+        <a data-nav="study" href="Study Hub.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">Study Hub</a>
+        <a data-nav="exercises" href="Exercises.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">Exercises</a>
+        <a data-nav="about" href="About Lecturer.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">Lecturer</a>
+        <a data-nav="active" href="Active Learning.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">Active Learning</a>
+        <a data-nav="chatbot" href="MA2 Chatbot.dc.html" style="text-decoration:none;color:#3a4550;font-weight:600;font-size:14px;padding:8px 13px;border-radius:8px;transition:all .15s;" style-hover="background:rgba(176,141,79,0.1);color:var(--accent-deep);">MA2 Chatbot</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============ STUDY HUB ============ -->
+  <section id="study" data-screen-label="Study Hub" style="scroll-margin-top:74px;padding:clamp(56px,8vw,100px) 0;background:#efede5;border-top:1px solid #e4e0d6;border-bottom:1px solid #e4e0d6;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 clamp(18px,5vw,48px);">
+      <p style="margin:0 0 12px;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-deep);">Section 02</p>
+      <h2 style="margin:0 0 14px;font-family:'Schibsted Grotesk';font-weight:700;font-size:clamp(28px,4vw,44px);letter-spacing:-0.02em;color:#16293f;">Welcome to MA2 Lecture</h2>
+      <p style="margin:0 0 28px;max-width:64ch;font-size:16px;line-height:1.7;color:#4a5560;">The full MA2 lecture notes, organised into 22 chapters across five parts. Search or filter by part, and tick chapters off as you study. Open any chapter for an AI summary, 10 practice questions with instant feedback, and a chat tutor — your progress is saved on this device.</p>
+
+      <!-- Full notes callout -->
+      <a href="https://drive.google.com/file/d/1pjhicMC3A37aq1JlNOFF38tGoNcMTEft/view?usp=drive_link" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:22px;text-decoration:none;background:#16293f;border-radius:16px;padding:22px 26px;margin-bottom:30px;flex-wrap:wrap;transition:transform .15s;" style-hover="transform:translateY(-2px);">
+        <span style="flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:11px;background:var(--accent);color:#16293f;font-family:'Schibsted Grotesk';font-weight:800;font-size:20px;">PDF</span>
+        <div style="flex:1;min-width:200px;">
+          <p style="margin:0 0 4px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);">Complete lecture notes</p>
+          <p style="margin:0 0 3px;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;color:#f5f4ef;">MA2 Lecture Notes — all 22 chapters</p>
+          <p style="margin:0;font-size:13px;color:#9fb0c0;"><br></p>
+        </div>
+        <span style="flex-shrink:0;display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#16293f;font-family:'Schibsted Grotesk';font-weight:700;font-size:14px;padding:11px 18px;border-radius:9px;">Open full notes →</span>
+      </a>
+
+      <!-- Controls -->
+      <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:18px;">
+        <div style="position:relative;flex:1;min-width:240px;">
+          <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:16px;color:#9a9686;pointer-events:none;">⌕</span>
+          <input data-search-input="" type="text" placeholder="Search chapters &amp; topics…" style="width:100%;padding:11px 14px 11px 38px;border:1px solid #d6d1c4;border-radius:10px;background:#fff;font-family:'Public Sans';font-size:14.5px;color:#16293f;outline:none;" style-focus="border-color:var(--accent);">
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:7px;">
+        <button data-filter="all" type="button" style="font-size:13px;font-weight:600;color:#16293f;background:#fff;border:1px solid #d6d1c4;border-radius:999px;padding:8px 14px;cursor:pointer;font-family:'Public Sans';transition:all .15s;">All chapters</button>
+        <button data-filter="A" type="button" style="font-size:13px;font-weight:600;color:#16293f;background:#fff;border:1px solid #d6d1c4;border-radius:999px;padding:8px 14px;cursor:pointer;font-family:'Public Sans';transition:all .15s;">A · Management Information</button>
+        <button data-filter="B" type="button" style="font-size:13px;font-weight:600;color:#16293f;background:#fff;border:1px solid #d6d1c4;border-radius:999px;padding:8px 14px;cursor:pointer;font-family:'Public Sans';transition:all .15s;">B · Cost Classification &amp; Reporting</button>
+        <button data-filter="C" type="button" style="font-size:13px;font-weight:600;color:#16293f;background:#fff;border:1px solid #d6d1c4;border-radius:999px;padding:8px 14px;cursor:pointer;font-family:'Public Sans';transition:all .15s;">C · Cost Accounting &amp; Costing Methods</button>
+        <button data-filter="D" type="button" style="font-size:13px;font-weight:600;color:#16293f;background:#fff;border:1px solid #d6d1c4;border-radius:999px;padding:8px 14px;cursor:pointer;font-family:'Public Sans';transition:all .15s;">D · Decision Making</button>
+        <button data-filter="E" type="button" style="font-size:13px;font-weight:600;color:#16293f;background:#fff;border:1px solid #d6d1c4;border-radius:999px;padding:8px 14px;cursor:pointer;font-family:'Public Sans';transition:all .15s;">E · Cash &amp; Financing</button>
+        </div>
+      </div>
+
+      <!-- Progress -->
+      <div style="background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:16px 20px;margin-bottom:clamp(34px,5vw,48px);">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:11px;flex-wrap:wrap;">
+          <span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:14px;color:#16293f;">Study progress</span>
+          <div style="display:flex;align-items:center;gap:16px;">
+            <span data-progress-count="" style="font-size:13px;font-weight:600;color:#6b7480;">0 / 22 chapters</span>
+            <button data-reset-progress="" type="button" style="border:none;background:none;color:#9a9686;font-size:12.5px;font-weight:600;cursor:pointer;font-family:'Public Sans';text-decoration:underline;">Reset</button>
+          </div>
+        </div>
+        <div style="height:8px;background:#ece9df;border-radius:999px;overflow:hidden;">
+          <div data-progress-bar="" style="height:100%;width:0%;background:var(--accent);border-radius:999px;transition:width .35s ease;"></div>
+        </div>
+      </div>
+
+      <div data-partblock="A" id="partA" style="scroll-margin-top:90px;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;flex-wrap:wrap;">
+          <span style="font-family:'Schibsted Grotesk';font-weight:800;font-size:13px;letter-spacing:.1em;color:var(--accent-deep);background:var(--accent-soft);padding:6px 11px;border-radius:7px;">PART A</span>
+          <h3 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:clamp(20px,2.6vw,26px);color:#16293f;letter-spacing:-0.01em;">Management Information</h3>
+          <span style="font-size:13px;color:#9a9686;font-weight:600;">Chapters 1–2</span>
+          <span style="flex:1;min-width:40px;height:1px;background:#e4e0d6;"></span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:16px;">
+        <article data-chapter="1" data-part="A" data-search="managing costs and finances management information: planning, control  and  decision-making data vs information; qualities of good information internal  and  external sources of information financial vs management accounts role of the cost accountant; cost codes  and  code types" id="ch1" style="scroll-margin-top:90px;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px 22px 22px;display:flex;flex-direction:column;gap:13px;transition:border-color .2s;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+            <span style="flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 9px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;border-radius:9px;">1</span>
+            <span data-page="" style="flex-shrink:0;font-size:12px;font-weight:600;color:#9a9686;letter-spacing:.02em;margin-top:5px;">p.&nbsp;1</span>
+          </div>
+          <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;line-height:1.3;color:#16293f;">Managing Costs and Finances</h4>
+          <ul data-topics="" style="display:grid;gap:7px;margin-top:2px;">
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Management information: planning, control &amp; decision-making</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Data vs information; qualities of good information</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Internal &amp; external sources of information</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Financial vs management accounts</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Role of the cost accountant; cost codes &amp; code types</li>
+          </ul>
+                    <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <button data-open-lesson="1" type="button" style="display:inline-flex;align-items:center;gap:7px;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;cursor:pointer;transition:background .15s;" style-hover="background:var(--accent-deep);">Open lesson →</button>
+            <button data-studied-toggle="1" type="button" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:all .15s;">
+              <span data-check="" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;border:1.5px solid #c2bdae;font-size:11px;line-height:1;color:#fff;"></span><span data-studied-label="">Mark as studied</span>
+            </button>
+          </div>
+        </article>
+        <article data-chapter="2" data-part="A" data-search="the role of information technology advantages  and  disadvantages of computers computerised accounting systems: files, records, fields batch processing real-time / online processing" id="ch2" style="scroll-margin-top:90px;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px 22px 22px;display:flex;flex-direction:column;gap:13px;transition:border-color .2s;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+            <span style="flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 9px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;border-radius:9px;">2</span>
+            <span data-page="" style="flex-shrink:0;font-size:12px;font-weight:600;color:#9a9686;letter-spacing:.02em;margin-top:5px;">p.&nbsp;15</span>
+          </div>
+          <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;line-height:1.3;color:#16293f;">The Role of Information Technology</h4>
+          <ul data-topics="" style="display:grid;gap:7px;margin-top:2px;">
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Advantages &amp; disadvantages of computers</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Computerised accounting systems: files, records, fields</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Batch processing</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Real-time / online processing</li>
+          </ul>
+                    <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <button data-open-lesson="2" type="button" style="display:inline-flex;align-items:center;gap:7px;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;cursor:pointer;transition:background .15s;" style-hover="background:var(--accent-deep);">Open lesson →</button>
+            <button data-studied-toggle="2" type="button" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:all .15s;">
+              <span data-check="" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;border:1.5px solid #c2bdae;font-size:11px;line-height:1;color:#fff;"></span><span data-studied-label="">Mark as studied</span>
+            </button>
+          </div>
+        </article>
+        </div>
+      </div>
+      <div data-partblock="B" id="partB" style="scroll-margin-top:90px;margin-top:48px;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;flex-wrap:wrap;">
+          <span style="font-family:'Schibsted Grotesk';font-weight:800;font-size:13px;letter-spacing:.1em;color:var(--accent-deep);background:var(--accent-soft);padding:6px 11px;border-radius:7px;">PART B</span>
+          <h3 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:clamp(20px,2.6vw,26px);color:#16293f;letter-spacing:-0.01em;">Cost Classification &amp; Reporting</h3>
+          <span style="font-size:13px;color:#9a9686;font-weight:600;">Chapters 3–6</span>
+          <span style="flex:1;min-width:40px;height:1px;background:#e4e0d6;"></span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:16px;">
+        <article data-chapter="3" data-part="B" data-search="cost classification cost units; direct  and  indirect costs (prime cost  and  overheads) classification by function classification by responsibility - cost, profit, revenue  and  investment centres product vs period costs; the unit cost card" id="ch3" style="scroll-margin-top:90px;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px 22px 22px;display:flex;flex-direction:column;gap:13px;transition:border-color .2s;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+            <span style="flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 9px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;border-radius:9px;">3</span>
+            <span data-page="" style="flex-shrink:0;font-size:12px;font-weight:600;color:#9a9686;letter-spacing:.02em;margin-top:5px;">p.&nbsp;19</span>
+          </div>
+          <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;line-height:1.3;color:#16293f;">Cost Classification</h4>
+          <ul data-topics="" style="display:grid;gap:7px;margin-top:2px;">
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Cost units; direct &amp; indirect costs (prime cost &amp; overheads)</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Classification by function</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Classification by responsibility — cost, profit, revenue &amp; investment centres</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Product vs period costs; the unit cost card</li>
+          </ul>
+                    <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <button data-open-lesson="3" type="button" style="display:inline-flex;align-items:center;gap:7px;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;cursor:pointer;transition:background .15s;" style-hover="background:var(--accent-deep);">Open lesson →</button>
+            <button data-studied-toggle="3" type="button" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:all .15s;">
+              <span data-check="" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;border:1.5px solid #c2bdae;font-size:11px;line-height:1;color:#fff;"></span><span data-studied-label="">Mark as studied</span>
+            </button>
+          </div>
+        </article>
+        <article data-chapter="4" data-part="B" data-search="cost behaviour cost behaviour  and  levels of activity fixed, variable, stepped-fixed  and  mixed costs cost per unit at different activity levels the high-low method" id="ch4" style="scroll-margin-top:90px;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px 22px 22px;display:flex;flex-direction:column;gap:13px;transition:border-color .2s;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+            <span style="flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 9px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;border-radius:9px;">4</span>
+            <span data-page="" style="flex-shrink:0;font-size:12px;font-weight:600;color:#9a9686;letter-spacing:.02em;margin-top:5px;">p.&nbsp;29</span>
+          </div>
+          <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;line-height:1.3;color:#16293f;">Cost Behaviour</h4>
+          <ul data-topics="" style="display:grid;gap:7px;margin-top:2px;">
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Cost behaviour &amp; levels of activity</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Fixed, variable, stepped-fixed &amp; mixed costs</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Cost per unit at different activity levels</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>The high-low method</li>
+          </ul>
+                    <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <button data-open-lesson="4" type="button" style="display:inline-flex;align-items:center;gap:7px;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;cursor:pointer;transition:background .15s;" style-hover="background:var(--accent-deep);">Open lesson →</button>
+            <button data-studied-toggle="4" type="button" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:all .15s;">
+              <span data-check="" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;border:1.5px solid #c2bdae;font-size:11px;line-height:1;color:#fff;"></span><span data-studied-label="">Mark as studied</span>
+            </button>
+          </div>
+        </article>
+        <article data-chapter="5" data-part="B" data-search="information for comparison types of comparison; feedback vs feedforward control fixed, flexible  and  flexed budgets sales, material  and  labour variances (f / a) variance investigation  and  exception reporting" id="ch5" style="scroll-margin-top:90px;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px 22px 22px;display:flex;flex-direction:column;gap:13px;transition:border-color .2s;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+            <span style="flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 9px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;border-radius:9px;">5</span>
+            <span data-page="" style="flex-shrink:0;font-size:12px;font-weight:600;color:#9a9686;letter-spacing:.02em;margin-top:5px;">p.&nbsp;39</span>
+          </div>
+          <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;line-height:1.3;color:#16293f;">Information for Comparison</h4>
+          <ul data-topics="" style="display:grid;gap:7px;margin-top:2px;">
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Types of comparison; feedback vs feedforward control</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Fixed, flexible &amp; flexed budgets</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Sales, material &amp; labour variances (F / A)</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Variance investigation &amp; exception reporting</li>
+          </ul>
+                    <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <button data-open-lesson="5" type="button" style="display:inline-flex;align-items:center;gap:7px;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;cursor:pointer;transition:background .15s;" style-hover="background:var(--accent-deep);">Open lesson →</button>
+            <button data-studied-toggle="5" type="button" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:all .15s;">
+              <span data-check="" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;border:1.5px solid #c2bdae;font-size:11px;line-height:1;color:#fff;"></span><span data-studied-label="">Mark as studied</span>
+            </button>
+          </div>
+        </article>
+        <article data-chapter="6" data-part="B" data-search="reporting management information routine  and  ad-hoc reports communication methods; letter  and  report formats data protection  and  confidentiality charts, graphs  and  tables" id="ch6" style="scroll-margin-top:90px;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px 22px 22px;display:flex;flex-direction:column;gap:13px;transition:border-color .2s;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+            <span style="flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 9px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;border-radius:9px;">6</span>
+            <span data-page="" style="flex-shrink:0;font-size:12px;font-weight:600;color:#9a9686;letter-spacing:.02em;margin-top:5px;">p.&nbsp;61</span>
+          </div>
+          <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;line-height:1.3;color:#16293f;">Reporting Management Information</h4>
+          <ul data-topics="" style="display:grid;gap:7px;margin-top:2px;">
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Routine &amp; ad-hoc reports</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Communication methods; letter &amp; report formats</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Data protection &amp; confidentiality</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Charts, graphs &amp; tables</li>
+          </ul>
+                    <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <button data-open-lesson="6" type="button" style="display:inline-flex;align-items:center;gap:7px;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;cursor:pointer;transition:background .15s;" style-hover="background:var(--accent-deep);">Open lesson →</button>
+            <button data-studied-toggle="6" type="button" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:all .15s;">
+              <span data-check="" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;border:1.5px solid #c2bdae;font-size:11px;line-height:1;color:#fff;"></span><span data-studied-label="">Mark as studied</span>
+            </button>
+          </div>
+        </article>
+        </div>
+      </div>
+      <div data-partblock="C" id="partC" style="scroll-margin-top:90px;margin-top:48px;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;flex-wrap:wrap;">
+          <span style="font-family:'Schibsted Grotesk';font-weight:800;font-size:13px;letter-spacing:.1em;color:var(--accent-deep);background:var(--accent-soft);padding:6px 11px;border-radius:7px;">PART C</span>
+          <h3 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:clamp(20px,2.6vw,26px);color:#16293f;letter-spacing:-0.01em;">Cost Accounting &amp; Costing Methods</h3>
+          <span style="font-size:13px;color:#9a9686;font-weight:600;">Chapters 7–14</span>
+          <span style="flex:1;min-width:40px;height:1px;background:#e4e0d6;"></span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:16px;">
+        <article data-chapter="7" data-part="C" data-search="materials types of material: raw materials, wip, finished goods purchasing  and  recording documents bin cards, stores ledger  and  stocktaking inventory valuation: fifo, lifo, avco inventory control levels  and  eoq" id="ch7" style="scroll-margin-top:90px;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px 22px 22px;display:flex;flex-direction:column;gap:13px;transition:border-color .2s;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+            <span style="flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 9px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;border-radius:9px;">7</span>
+            <span data-page="" style="flex-shrink:0;font-size:12px;font-weight:600;color:#9a9686;letter-spacing:.02em;margin-top:5px;">p.&nbsp;69</span>
+          </div>
+          <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;line-height:1.3;color:#16293f;">Materials</h4>
+          <ul data-topics="" style="display:grid;gap:7px;margin-top:2px;">
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Types of material: raw materials, WIP, finished goods</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Purchasing &amp; recording documents</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Bin cards, stores ledger &amp; stocktaking</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Inventory valuation: FIFO, LIFO, AVCO</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Inventory control levels &amp; EOQ</li>
+          </ul>
+                    <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <button data-open-lesson="7" type="button" style="display:inline-flex;align-items:center;gap:7px;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;cursor:pointer;transition:background .15s;" style-hover="background:var(--accent-deep);">Open lesson →</button>
+            <button data-studied-toggle="7" type="button" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:all .15s;">
+              <span data-check="" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;border:1.5px solid #c2bdae;font-size:11px;line-height:1;color:#fff;"></span><span data-studied-label="">Mark as studied</span>
+            </button>
+          </div>
+        </article>
+        <article data-chapter="8" data-part="C" data-search="labour direct vs indirect labour remuneration: time, piecework  and  bonus schemes overtime  and  idle time labour turnover  and  efficiency ratios recording  and  accounting for labour costs" id="ch8" style="scroll-margin-top:90px;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px 22px 22px;display:flex;flex-direction:column;gap:13px;transition:border-color .2s;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+            <span style="flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 9px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;border-radius:9px;">8</span>
+            <span data-page="" style="flex-shrink:0;font-size:12px;font-weight:600;color:#9a9686;letter-spacing:.02em;margin-top:5px;">p.&nbsp;89</span>
+          </div>
+          <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;line-height:1.3;color:#16293f;">Labour</h4>
+          <ul data-topics="" style="display:grid;gap:7px;margin-top:2px;">
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Direct vs indirect labour</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Remuneration: time, piecework &amp; bonus schemes</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Overtime &amp; idle time</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Labour turnover &amp; efficiency ratios</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Recording &amp; accounting for labour costs</li>
+          </ul>
+                    <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <button data-open-lesson="8" type="button" style="display:inline-flex;align-items:center;gap:7px;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;cursor:pointer;transition:background .15s;" style-hover="background:var(--accent-deep);">Open lesson →</button>
+            <button data-studied-toggle="8" type="button" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:all .15s;">
+              <span data-check="" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;border:1.5px solid #c2bdae;font-size:11px;line-height:1;color:#fff;"></span><span data-studied-label="">Mark as studied</span>
+            </button>
+          </div>
+        </article>
+        <article data-chapter="9" data-part="C" data-search="expenses direct vs indirect expenses capital vs revenue expenditure depreciation methods accruals  and  prepayments" id="ch9" style="scroll-margin-top:90px;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px 22px 22px;display:flex;flex-direction:column;gap:13px;transition:border-color .2s;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+            <span style="flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 9px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;border-radius:9px;">9</span>
+            <span data-page="" style="flex-shrink:0;font-size:12px;font-weight:600;color:#9a9686;letter-spacing:.02em;margin-top:5px;">p.&nbsp;113</span>
+          </div>
+          <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;line-height:1.3;color:#16293f;">Expenses</h4>
+          <ul data-topics="" style="display:grid;gap:7px;margin-top:2px;">
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Direct vs indirect expenses</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Capital vs revenue expenditure</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Depreciation methods</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Accruals &amp; prepayments</li>
+          </ul>
+                    <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <button data-open-lesson="9" type="button" style="display:inline-flex;align-items:center;gap:7px;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;cursor:pointer;transition:background .15s;" style-hover="background:var(--accent-deep);">Open lesson →</button>
+            <button data-studied-toggle="9" type="button" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:all .15s;">
+              <span data-check="" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;border:1.5px solid #c2bdae;font-size:11px;line-height:1;color:#fff;"></span><span data-studied-label="">Mark as studied</span>
+            </button>
+          </div>
+        </article>
+        <article data-chapter="10" data-part="C" data-search="overheads  and  absorption costing allocation  and  apportionment of overheads reapportionment of service cost centres overhead absorption rates (oar) over- and under-absorption" id="ch10" style="scroll-margin-top:90px;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px 22px 22px;display:flex;flex-direction:column;gap:13px;transition:border-color .2s;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+            <span style="flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 9px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;border-radius:9px;">10</span>
+            <span data-page="" style="flex-shrink:0;font-size:12px;font-weight:600;color:#9a9686;letter-spacing:.02em;margin-top:5px;">p.&nbsp;123</span>
+          </div>
+          <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;line-height:1.3;color:#16293f;">Overheads &amp; Absorption Costing</h4>
+          <ul data-topics="" style="display:grid;gap:7px;margin-top:2px;">
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Allocation &amp; apportionment of overheads</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Reapportionment of service cost centres</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Overhead absorption rates (OAR)</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Over- and under-absorption</li>
+          </ul>
+                    <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <button data-open-lesson="10" type="button" style="display:inline-flex;align-items:center;gap:7px;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;cursor:pointer;transition:background .15s;" style-hover="background:var(--accent-deep);">Open lesson →</button>
+            <button data-studied-toggle="10" type="button" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:all .15s;">
+              <span data-check="" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;border:1.5px solid #c2bdae;font-size:11px;line-height:1;color:#fff;"></span><span data-studied-label="">Mark as studied</span>
+            </button>
+          </div>
+        </article>
+        <article data-chapter="11" data-part="C" data-search="marginal costing  and  absorption costing contribution marginal vs absorption profit statements reconciling the profit difference advantages of each method" id="ch11" style="scroll-margin-top:90px;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px 22px 22px;display:flex;flex-direction:column;gap:13px;transition:border-color .2s;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+            <span style="flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 9px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;border-radius:9px;">11</span>
+            <span data-page="" style="flex-shrink:0;font-size:12px;font-weight:600;color:#9a9686;letter-spacing:.02em;margin-top:5px;">p.&nbsp;141</span>
+          </div>
+          <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;line-height:1.3;color:#16293f;">Marginal Costing &amp; Absorption Costing</h4>
+          <ul data-topics="" style="display:grid;gap:7px;margin-top:2px;">
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Contribution</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Marginal vs absorption profit statements</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Reconciling the profit difference</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Advantages of each method</li>
+          </ul>
+                    <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <button data-open-lesson="11" type="button" style="display:inline-flex;align-items:center;gap:7px;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;cursor:pointer;transition:background .15s;" style-hover="background:var(--accent-deep);">Open lesson →</button>
+            <button data-studied-toggle="11" type="button" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:all .15s;">
+              <span data-check="" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;border:1.5px solid #c2bdae;font-size:11px;line-height:1;color:#fff;"></span><span data-studied-label="">Mark as studied</span>
+            </button>
+          </div>
+        </article>
+        <article data-chapter="12" data-part="C" data-search="cost bookkeeping integrated vs interlocking systems cost ledger control accounts accounting for materials, labour  and  overheads" id="ch12" style="scroll-margin-top:90px;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px 22px 22px;display:flex;flex-direction:column;gap:13px;transition:border-color .2s;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+            <span style="flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 9px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;border-radius:9px;">12</span>
+            <span data-page="" style="flex-shrink:0;font-size:12px;font-weight:600;color:#9a9686;letter-spacing:.02em;margin-top:5px;">p.&nbsp;159</span>
+          </div>
+          <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;line-height:1.3;color:#16293f;">Cost Bookkeeping</h4>
+          <ul data-topics="" style="display:grid;gap:7px;margin-top:2px;">
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Integrated vs interlocking systems</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Cost ledger control accounts</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Accounting for materials, labour &amp; overheads</li>
+          </ul>
+                    <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <button data-open-lesson="12" type="button" style="display:inline-flex;align-items:center;gap:7px;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;cursor:pointer;transition:background .15s;" style-hover="background:var(--accent-deep);">Open lesson →</button>
+            <button data-studied-toggle="12" type="button" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:all .15s;">
+              <span data-check="" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;border:1.5px solid #c2bdae;font-size:11px;line-height:1;color:#fff;"></span><span data-studied-label="">Mark as studied</span>
+            </button>
+          </div>
+        </article>
+        <article data-chapter="13" data-part="C" data-search="job, batch and service costing job costing batch costing service / operation costing choosing cost units for services" id="ch13" style="scroll-margin-top:90px;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px 22px 22px;display:flex;flex-direction:column;gap:13px;transition:border-color .2s;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+            <span style="flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 9px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;border-radius:9px;">13</span>
+            <span data-page="" style="flex-shrink:0;font-size:12px;font-weight:600;color:#9a9686;letter-spacing:.02em;margin-top:5px;">p.&nbsp;171</span>
+          </div>
+          <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;line-height:1.3;color:#16293f;">Job, Batch and Service Costing</h4>
+          <ul data-topics="" style="display:grid;gap:7px;margin-top:2px;">
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Job costing</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Batch costing</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Service / operation costing</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Choosing cost units for services</li>
+          </ul>
+                    <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <button data-open-lesson="13" type="button" style="display:inline-flex;align-items:center;gap:7px;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;cursor:pointer;transition:background .15s;" style-hover="background:var(--accent-deep);">Open lesson →</button>
+            <button data-studied-toggle="13" type="button" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:all .15s;">
+              <span data-check="" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;border:1.5px solid #c2bdae;font-size:11px;line-height:1;color:#fff;"></span><span data-studied-label="">Mark as studied</span>
+            </button>
+          </div>
+        </article>
+        <article data-chapter="14" data-part="C" data-search="process costing process accounts normal  and  abnormal loss / gain equivalent units  and  wip valuation joint products  and  by-products" id="ch14" style="scroll-margin-top:90px;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px 22px 22px;display:flex;flex-direction:column;gap:13px;transition:border-color .2s;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+            <span style="flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 9px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;border-radius:9px;">14</span>
+            <span data-page="" style="flex-shrink:0;font-size:12px;font-weight:600;color:#9a9686;letter-spacing:.02em;margin-top:5px;">p.&nbsp;179</span>
+          </div>
+          <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;line-height:1.3;color:#16293f;">Process Costing</h4>
+          <ul data-topics="" style="display:grid;gap:7px;margin-top:2px;">
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Process accounts</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Normal &amp; abnormal loss / gain</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Equivalent units &amp; WIP valuation</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Joint products &amp; by-products</li>
+          </ul>
+                    <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <button data-open-lesson="14" type="button" style="display:inline-flex;align-items:center;gap:7px;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;cursor:pointer;transition:background .15s;" style-hover="background:var(--accent-deep);">Open lesson →</button>
+            <button data-studied-toggle="14" type="button" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:all .15s;">
+              <span data-check="" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;border:1.5px solid #c2bdae;font-size:11px;line-height:1;color:#fff;"></span><span data-studied-label="">Mark as studied</span>
+            </button>
+          </div>
+        </article>
+        </div>
+      </div>
+      <div data-partblock="D" id="partD" style="scroll-margin-top:90px;margin-top:48px;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;flex-wrap:wrap;">
+          <span style="font-family:'Schibsted Grotesk';font-weight:800;font-size:13px;letter-spacing:.1em;color:var(--accent-deep);background:var(--accent-soft);padding:6px 11px;border-radius:7px;">PART D</span>
+          <h3 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:clamp(20px,2.6vw,26px);color:#16293f;letter-spacing:-0.01em;">Decision Making</h3>
+          <span style="font-size:13px;color:#9a9686;font-weight:600;">Chapters 15–17</span>
+          <span style="flex:1;min-width:40px;height:1px;background:#e4e0d6;"></span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:16px;">
+        <article data-chapter="15" data-part="D" data-search="cost-volume-profit analysis contribution  and  the c/s ratio break-even point margin of safety target profit; break-even  and  profit-volume charts" id="ch15" style="scroll-margin-top:90px;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px 22px 22px;display:flex;flex-direction:column;gap:13px;transition:border-color .2s;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+            <span style="flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 9px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;border-radius:9px;">15</span>
+            <span data-page="" style="flex-shrink:0;font-size:12px;font-weight:600;color:#9a9686;letter-spacing:.02em;margin-top:5px;">p.&nbsp;191</span>
+          </div>
+          <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;line-height:1.3;color:#16293f;">Cost-Volume-Profit Analysis</h4>
+          <ul data-topics="" style="display:grid;gap:7px;margin-top:2px;">
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Contribution &amp; the C/S ratio</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Break-even point</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Margin of safety</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Target profit; break-even &amp; profit-volume charts</li>
+          </ul>
+                    <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <button data-open-lesson="15" type="button" style="display:inline-flex;align-items:center;gap:7px;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;cursor:pointer;transition:background .15s;" style-hover="background:var(--accent-deep);">Open lesson →</button>
+            <button data-studied-toggle="15" type="button" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:all .15s;">
+              <span data-check="" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;border:1.5px solid #c2bdae;font-size:11px;line-height:1;color:#fff;"></span><span data-studied-label="">Mark as studied</span>
+            </button>
+          </div>
+        </article>
+        <article data-chapter="16" data-part="D" data-search="short term decisions relevant costs  and  revenues sunk  and  committed costs make-or-buy decisions limiting factor analysis shutdown decisions" id="ch16" style="scroll-margin-top:90px;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px 22px 22px;display:flex;flex-direction:column;gap:13px;transition:border-color .2s;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+            <span style="flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 9px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;border-radius:9px;">16</span>
+            <span data-page="" style="flex-shrink:0;font-size:12px;font-weight:600;color:#9a9686;letter-spacing:.02em;margin-top:5px;">p.&nbsp;209</span>
+          </div>
+          <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;line-height:1.3;color:#16293f;">Short Term Decisions</h4>
+          <ul data-topics="" style="display:grid;gap:7px;margin-top:2px;">
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Relevant costs &amp; revenues</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Sunk &amp; committed costs</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Make-or-buy decisions</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Limiting factor analysis</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Shutdown decisions</li>
+          </ul>
+                    <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <button data-open-lesson="16" type="button" style="display:inline-flex;align-items:center;gap:7px;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;cursor:pointer;transition:background .15s;" style-hover="background:var(--accent-deep);">Open lesson →</button>
+            <button data-studied-toggle="16" type="button" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:all .15s;">
+              <span data-check="" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;border:1.5px solid #c2bdae;font-size:11px;line-height:1;color:#fff;"></span><span data-studied-label="">Mark as studied</span>
+            </button>
+          </div>
+        </article>
+        <article data-chapter="17" data-part="D" data-search="capital investment appraisal relevant cash flows payback period net present value (npv) internal rate of return (irr) discounting  and  present value tables" id="ch17" style="scroll-margin-top:90px;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px 22px 22px;display:flex;flex-direction:column;gap:13px;transition:border-color .2s;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+            <span style="flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 9px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;border-radius:9px;">17</span>
+            <span data-page="" style="flex-shrink:0;font-size:12px;font-weight:600;color:#9a9686;letter-spacing:.02em;margin-top:5px;">p.&nbsp;225</span>
+          </div>
+          <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;line-height:1.3;color:#16293f;">Capital Investment Appraisal</h4>
+          <ul data-topics="" style="display:grid;gap:7px;margin-top:2px;">
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Relevant cash flows</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Payback period</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Net present value (NPV)</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Internal rate of return (IRR)</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Discounting &amp; present value tables</li>
+          </ul>
+                    <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <button data-open-lesson="17" type="button" style="display:inline-flex;align-items:center;gap:7px;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;cursor:pointer;transition:background .15s;" style-hover="background:var(--accent-deep);">Open lesson →</button>
+            <button data-studied-toggle="17" type="button" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:all .15s;">
+              <span data-check="" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;border:1.5px solid #c2bdae;font-size:11px;line-height:1;color:#fff;"></span><span data-studied-label="">Mark as studied</span>
+            </button>
+          </div>
+        </article>
+        </div>
+      </div>
+      <div data-partblock="E" id="partE" style="scroll-margin-top:90px;margin-top:48px;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;flex-wrap:wrap;">
+          <span style="font-family:'Schibsted Grotesk';font-weight:800;font-size:13px;letter-spacing:.1em;color:var(--accent-deep);background:var(--accent-soft);padding:6px 11px;border-radius:7px;">PART E</span>
+          <h3 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:clamp(20px,2.6vw,26px);color:#16293f;letter-spacing:-0.01em;">Cash &amp; Financing</h3>
+          <span style="font-size:13px;color:#9a9686;font-weight:600;">Chapters 18–22</span>
+          <span style="flex:1;min-width:40px;height:1px;background:#e4e0d6;"></span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:16px;">
+        <article data-chapter="18" data-part="E" data-search="cash and cash flows cash vs profit the operating / cash cycle managing receivables, payables  and  inventory" id="ch18" style="scroll-margin-top:90px;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px 22px 22px;display:flex;flex-direction:column;gap:13px;transition:border-color .2s;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+            <span style="flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 9px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;border-radius:9px;">18</span>
+            <span data-page="" style="flex-shrink:0;font-size:12px;font-weight:600;color:#9a9686;letter-spacing:.02em;margin-top:5px;">p.&nbsp;245</span>
+          </div>
+          <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;line-height:1.3;color:#16293f;">Cash and Cash Flows</h4>
+          <ul data-topics="" style="display:grid;gap:7px;margin-top:2px;">
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Cash vs profit</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>The operating / cash cycle</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Managing receivables, payables &amp; inventory</li>
+          </ul>
+                    <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <button data-open-lesson="18" type="button" style="display:inline-flex;align-items:center;gap:7px;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;cursor:pointer;transition:background .15s;" style-hover="background:var(--accent-deep);">Open lesson →</button>
+            <button data-studied-toggle="18" type="button" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:all .15s;">
+              <span data-check="" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;border:1.5px solid #c2bdae;font-size:11px;line-height:1;color:#fff;"></span><span data-studied-label="">Mark as studied</span>
+            </button>
+          </div>
+        </article>
+        <article data-chapter="19" data-part="E" data-search="cash and treasury management the treasury function liquidity management centralised vs decentralised treasury" id="ch19" style="scroll-margin-top:90px;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px 22px 22px;display:flex;flex-direction:column;gap:13px;transition:border-color .2s;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+            <span style="flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 9px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;border-radius:9px;">19</span>
+            <span data-page="" style="flex-shrink:0;font-size:12px;font-weight:600;color:#9a9686;letter-spacing:.02em;margin-top:5px;">p.&nbsp;257</span>
+          </div>
+          <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;line-height:1.3;color:#16293f;">Cash and Treasury Management</h4>
+          <ul data-topics="" style="display:grid;gap:7px;margin-top:2px;">
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>The treasury function</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Liquidity management</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Centralised vs decentralised treasury</li>
+          </ul>
+                    <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <button data-open-lesson="19" type="button" style="display:inline-flex;align-items:center;gap:7px;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;cursor:pointer;transition:background .15s;" style-hover="background:var(--accent-deep);">Open lesson →</button>
+            <button data-studied-toggle="19" type="button" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:all .15s;">
+              <span data-check="" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;border:1.5px solid #c2bdae;font-size:11px;line-height:1;color:#fff;"></span><span data-studied-label="">Mark as studied</span>
+            </button>
+          </div>
+        </article>
+        <article data-chapter="20" data-part="E" data-search="forecasting cash flows the cash budget: receipts  and  payments time series  and  moving averages allowing for inflation  and  seasonality" id="ch20" style="scroll-margin-top:90px;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px 22px 22px;display:flex;flex-direction:column;gap:13px;transition:border-color .2s;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+            <span style="flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 9px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;border-radius:9px;">20</span>
+            <span data-page="" style="flex-shrink:0;font-size:12px;font-weight:600;color:#9a9686;letter-spacing:.02em;margin-top:5px;">p.&nbsp;267</span>
+          </div>
+          <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;line-height:1.3;color:#16293f;">Forecasting Cash Flows</h4>
+          <ul data-topics="" style="display:grid;gap:7px;margin-top:2px;">
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>The cash budget: receipts &amp; payments</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Time series &amp; moving averages</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Allowing for inflation &amp; seasonality</li>
+          </ul>
+                    <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <button data-open-lesson="20" type="button" style="display:inline-flex;align-items:center;gap:7px;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;cursor:pointer;transition:background .15s;" style-hover="background:var(--accent-deep);">Open lesson →</button>
+            <button data-studied-toggle="20" type="button" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:all .15s;">
+              <span data-check="" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;border:1.5px solid #c2bdae;font-size:11px;line-height:1;color:#fff;"></span><span data-studied-label="">Mark as studied</span>
+            </button>
+          </div>
+        </article>
+        <article data-chapter="21" data-part="E" data-search="investing surplus funds objectives: risk, return  and  liquidity money-market investments types of investment  and  the risk-return trade-off" id="ch21" style="scroll-margin-top:90px;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px 22px 22px;display:flex;flex-direction:column;gap:13px;transition:border-color .2s;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+            <span style="flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 9px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;border-radius:9px;">21</span>
+            <span data-page="" style="flex-shrink:0;font-size:12px;font-weight:600;color:#9a9686;letter-spacing:.02em;margin-top:5px;">p.&nbsp;291</span>
+          </div>
+          <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;line-height:1.3;color:#16293f;">Investing Surplus Funds</h4>
+          <ul data-topics="" style="display:grid;gap:7px;margin-top:2px;">
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Objectives: risk, return &amp; liquidity</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Money-market investments</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Types of investment &amp; the risk–return trade-off</li>
+          </ul>
+                    <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <button data-open-lesson="21" type="button" style="display:inline-flex;align-items:center;gap:7px;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;cursor:pointer;transition:background .15s;" style-hover="background:var(--accent-deep);">Open lesson →</button>
+            <button data-studied-toggle="21" type="button" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:all .15s;">
+              <span data-check="" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;border:1.5px solid #c2bdae;font-size:11px;line-height:1;color:#fff;"></span><span data-studied-label="">Mark as studied</span>
+            </button>
+          </div>
+        </article>
+        <article data-chapter="22" data-part="E" data-search="raising finance from a bank short- vs long-term finance overdrafts  and  bank loans security  and  covenants assessing a financing request" id="ch22" style="scroll-margin-top:90px;background:#fff;border:1px solid #e4e0d6;border-radius:14px;padding:22px 22px 22px;display:flex;flex-direction:column;gap:13px;transition:border-color .2s;">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+            <span style="flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 9px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:16px;border-radius:9px;">22</span>
+            <span data-page="" style="flex-shrink:0;font-size:12px;font-weight:600;color:#9a9686;letter-spacing:.02em;margin-top:5px;">p.&nbsp;301</span>
+          </div>
+          <h4 style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:18px;line-height:1.3;color:#16293f;">Raising Finance From A Bank</h4>
+          <ul data-topics="" style="display:grid;gap:7px;margin-top:2px;">
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Short- vs long-term finance</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Overdrafts &amp; bank loans</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Security &amp; covenants</li>
+            <li style="list-style:none;padding-left:16px;position:relative;font-size:13.5px;line-height:1.5;color:#4a5560;"><span style="position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Assessing a financing request</li>
+          </ul>
+                    <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <button data-open-lesson="22" type="button" style="display:inline-flex;align-items:center;gap:7px;border:none;background:#16293f;color:#f5f4ef;font-family:'Schibsted Grotesk';font-size:13px;font-weight:700;padding:9px 15px;border-radius:999px;cursor:pointer;transition:background .15s;" style-hover="background:var(--accent-deep);">Open lesson →</button>
+            <button data-studied-toggle="22" type="button" style="display:inline-flex;align-items:center;gap:8px;border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:'Public Sans';font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;cursor:pointer;transition:all .15s;">
+              <span data-check="" style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;border:1.5px solid #c2bdae;font-size:11px;line-height:1;color:#fff;"></span><span data-studied-label="">Mark as studied</span>
+            </button>
+          </div>
+        </article>
+        </div>
+      </div>
+
+      <div data-empty="" style="display:none;text-align:center;padding:54px 20px;color:#8a8678;">
+        <p style="margin:0 0 10px;font-size:15px;">No chapters match your search.</p>
+        <button data-clear-search="" type="button" style="border:1px solid #d6d1c4;background:#fff;color:#16293f;font-family:'Public Sans';font-size:13.5px;font-weight:600;padding:8px 16px;border-radius:999px;cursor:pointer;">Clear filters</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LESSON MODAL ============ -->
+  <div data-modal="" style="display:none;position:fixed;inset:0;z-index:100;">
+    <div data-modal-close-bg="" style="position:absolute;inset:0;background:rgba(22,41,63,0.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);"></div>
+    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:clamp(8px,3vw,40px);pointer-events:none;">
+      <div style="pointer-events:auto;background:#f5f4ef;border-radius:18px;width:min(880px,100%);height:min(720px,94vh);display:flex;flex-direction:column;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.32);">
+        <div style="display:flex;align-items:flex-start;gap:14px;padding:20px 24px;border-bottom:1px solid #e4e0d6;background:#fff;">
+          <span data-modal-num="" style="flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-width:42px;height:42px;padding:0 10px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Schibsted Grotesk';font-weight:800;font-size:18px;border-radius:10px;">1</span>
+          <div style="flex:1;min-width:0;">
+            <p data-modal-page="" style="margin:0 0 2px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9a9686;">Chapter</p>
+            <h3 data-modal-title="" style="margin:0;font-family:'Schibsted Grotesk';font-weight:700;font-size:21px;line-height:1.25;color:#16293f;">Chapter</h3>
+          </div>
+          <button data-modal-close="" type="button" aria-label="Close" style="flex-shrink:0;width:36px;height:36px;border-radius:9px;border:1px solid #e4e0d6;background:#fff;color:#6b7480;font-size:16px;cursor:pointer;line-height:1;">✕</button>
+        </div>
+        <div style="display:flex;gap:2px;padding:8px 24px 0;background:#fff;border-bottom:1px solid #e4e0d6;overflow-x:auto;">
+          <button data-modal-tab="summary" type="button" style="padding:12px 16px;border:none;background:none;font-family:'Public Sans';font-size:14px;font-weight:600;color:#6b7480;cursor:pointer;border-bottom:2.5px solid transparent;margin-bottom:-1px;white-space:nowrap;">Summary</button>
+          <button data-modal-tab="quiz" type="button" style="padding:12px 16px;border:none;background:none;font-family:'Public Sans';font-size:14px;font-weight:600;color:#6b7480;cursor:pointer;border-bottom:2.5px solid transparent;margin-bottom:-1px;white-space:nowrap;">Practice · 10 MCQs</button>
+          <button data-modal-tab="tutor" type="button" style="padding:12px 16px;border:none;background:none;font-family:'Public Sans';font-size:14px;font-weight:600;color:#6b7480;cursor:pointer;border-bottom:2.5px solid transparent;margin-bottom:-1px;white-space:nowrap;">AI Tutor</button>
+        </div>
+        <div style="flex:1;overflow:hidden;position:relative;">
+          <div data-panel="summary" style="position:absolute;inset:0;overflow-y:auto;padding:24px 26px;"></div>
+          <div data-panel="quiz" style="position:absolute;inset:0;overflow-y:auto;padding:24px 26px;display:none;"></div>
+          <div data-panel="tutor" style="position:absolute;inset:0;display:none;flex-direction:column;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:#16293f;color:#cdd5dd;">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(44px,6vw,68px) clamp(18px,5vw,48px) 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:36px;">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;"><span style="background:var(--accent);color:#16293f;font-family:'Schibsted Grotesk';font-weight:700;font-size:12px;padding:6px 9px;border-radius:6px;">ACCT 221</span><span style="font-family:'Schibsted Grotesk';font-weight:700;font-size:15px;color:#f5f4ef;">Management Accounting 1</span></div>
+        <p style="margin:0;font-size:13.5px;line-height:1.6;color:#9fb0c0;max-width:34ch;">Second-year Foundations in Accountancy. Costing, decision-making and cash management for internal reporting.</p>
+      </div>
+      <div>
+        <p style="margin:0 0 14px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#7e90a2;">Navigate</p>
+        <div style="display:grid;gap:9px;">
+          <a href="Management Accounting Hub.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">Home</a>
+          <a href="Syllabus.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">Syllabus &amp; Schedule</a>
+          <a href="Study Hub.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">Study Reference Hub</a>
+          <a href="Exercises.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">Exercises</a>
+          <a href="About Lecturer.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">About the Lecturer</a>
+          <a href="Active Learning.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">Active Learning</a>
+          <a href="MA2 Chatbot.dc.html" style="text-decoration:none;color:#cdd5dd;font-size:14px;transition:color .15s;" style-hover="color:var(--accent);">MA2 Chatbot</a>
+        </div>
+      </div>
+      <div>
+        <p style="margin:0 0 14px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#7e90a2;">Contact</p>
+        <div style="display:grid;gap:9px;font-size:14px;line-height:1.5;">
+          <span style="color:#f5f4ef;font-weight:600;">Mean Udam, MSc, ACCA</span>
+          <a href="mailto:mudam@cam-ed.com" style="text-decoration:none;color:var(--accent);font-weight:600;transition:color .15s;" style-hover="color:#c79e5b;">mudam@cam-ed.com</a>
+          <span style="color:#9fb0c0;">CamEd Business School</span>
+          <span style="color:#9fb0c0;">Term: July – December 2026</span>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.1);">
+      <div style="max-width:1180px;margin:0 auto;padding:18px clamp(18px,5vw,48px);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:12.5px;color:#7e90a2;">
+        <span>© 2026 Management Accounting 1 · ACCT 221</span>
+        <span>Course hub · syllabus · study reference · exercises</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#b08d4f&quot;,&quot;options&quot;:[&quot;#b08d4f&quot;,&quot;#1f7a6d&quot;,&quot;#8c2f39&quot;,&quot;#3a6ea5&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Appearance&quot;},&quot;showPageNumbers&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;showTopics&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+class Component extends DCLogic {
+  state = { activeSection: 'study' };
+
+  componentDidMount() {
+    this.filter = 'all';
+    this.query = '';
+    this.chats = {};
+    this.answered = {};
+    this.modalTab = 'summary';
+    this.loadProgress();
+    this.applyTweaks();
+    this.paintNav();
+    this.wireUp();
+    this.paintFilter();
+    this.paintStudied();
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.rootEl) {
+        const m = this.rootEl.querySelector('[data-modal]');
+        if (m && m.style.display !== 'none') this.closeModal();
+      }
+    });
+    const ids = ['home', 'syllabus', 'study', 'tools', 'portfolio'];
+    this.io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) this.setState({ activeSection: e.target.id }); });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    if (this.rootEl) ids.forEach((id) => { const el = this.rootEl.querySelector('#' + id); if (el) this.io.observe(el); });
+  }
+
+  componentDidUpdate() {
+    this.applyTweaks();
+    this.paintNav();
+    this.paintFilter();
+    this.paintStudied();
+    const inp = this.rootEl && this.rootEl.querySelector('[data-search-input]');
+    if (inp && inp.value !== this.query) inp.value = this.query;
+  }
+
+  componentWillUnmount() { if (this.io) this.io.disconnect(); }
+
+  root() { return this.rootEl; }
+  modalPanel(t) { return this.rootEl.querySelector('[data-panel="' + t + '"]'); }
+
+  esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+  fmt(t) {
+    const lines = this.esc(t).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').split(/\n/);
+    let html = '', inList = false;
+    for (const ln of lines) {
+      const h = ln.match(/^\s*(#{1,6})\s+(.*)/);
+      if (h) {
+        if (inList) { html += '</ul>'; inList = false; }
+        html += '<p style="margin:12px 0 6px;font-family:\'Schibsted Grotesk\';font-weight:700;font-size:14.5px;color:#16293f;">' + h[2] + '</p>';
+        continue;
+      }
+      const m = ln.match(/^\s*[-•]\s+(.*)/);
+      if (m) {
+        if (!inList) { html += '<ul style="margin:6px 0;padding-left:18px;display:grid;gap:4px;">'; inList = true; }
+        html += '<li style="font-size:14px;line-height:1.55;">' + m[1] + '</li>';
+      } else {
+        if (inList) { html += '</ul>'; inList = false; }
+        if (ln.trim() === '') continue;
+        html += '<p style="margin:0 0 9px;font-size:14px;line-height:1.6;">' + ln + '</p>';
+      }
+    }
+    if (inList) html += '</ul>';
+    return html;
+  }
+
+  cleanJ(raw) {
+    let s = String(raw || '').split(String.fromCharCode(96)).join('').trim();
+    if (s.slice(0, 4).toLowerCase() === 'json') s = s.slice(4).trim();
+    return s;
+  }
+  parseJson(raw) { try { const s = this.cleanJ(raw); return JSON.parse(s.slice(s.indexOf('{'), s.lastIndexOf('}') + 1)); } catch (e) { return null; } }
+  parseArr(raw) { try { const s = this.cleanJ(raw); return JSON.parse(s.slice(s.indexOf('['), s.lastIndexOf(']') + 1)); } catch (e) { return null; } }
+
+  lsGet(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } }
+  lsSet(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  lsDel(k) { try { localStorage.removeItem(k); } catch (e) {} }
+  loadChat(n) { try { this.chats[n] = JSON.parse(localStorage.getItem('ma2-ch-chat-' + n)) || []; } catch (e) { this.chats[n] = []; } }
+  saveChat(n) { try { localStorage.setItem('ma2-ch-chat-' + n, JSON.stringify(this.chats[n] || [])); } catch (e) {} }
+
+  aiReady() { return !!(window.claude && window.claude.complete); }
+  aiUnavailable() { return '<div style="text-align:center;padding:46px 20px;color:#8a8678;"><p style="margin:0;font-size:14.5px;line-height:1.6;">These are generated live by AI — open this page in the interactive preview to use the summary, practice questions and tutor.</p></div>'; }
+  loadingBlock(msg) { return '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:60px 20px;text-align:center;"><span style="width:26px;height:26px;border:3px solid var(--accent-soft);border-top-color:var(--accent);border-radius:50%;display:inline-block;animation:ma2spin .8s linear infinite;"></span><p style="margin:0;color:#8a8678;font-size:14px;">' + msg + '</p></div>'; }
+  errorBlock(msg, which) { return '<div style="text-align:center;padding:50px 20px;color:#8a8678;"><p style="margin:0 0 14px;font-size:14.5px;">' + msg + '</p><button data-regen="' + which + '" type="button" style="border:1px solid #d6d1c4;background:#fff;color:#16293f;font-family:\'Public Sans\';font-size:13.5px;font-weight:600;padding:8px 16px;border-radius:999px;cursor:pointer;">Try again</button></div>'; }
+  regenLink(which) { return '<div style="margin-top:18px;text-align:center;"><button data-regen="' + which + '" type="button" style="border:none;background:none;color:#9a9686;font-size:12.5px;font-weight:600;cursor:pointer;font-family:\'Public Sans\';text-decoration:underline;">↻ Regenerate</button></div>'; }
+
+  ctx(n) {
+    const card = this.rootEl.querySelector('[data-chapter="' + n + '"]');
+    return {
+      title: card.querySelector('h4').textContent.trim(),
+      topics: Array.prototype.map.call(card.querySelectorAll('[data-topics] li'), (li) => li.textContent.trim())
+    };
+  }
+
+  wireUp() {
+    if (!this.rootEl || this._wired) return;
+    this._wired = true;
+    this.rootEl.addEventListener('click', (e) => {
+      const f = e.target.closest('[data-filter]');
+      if (f) { this.filter = f.getAttribute('data-filter'); this.paintFilter(); return; }
+      const st = e.target.closest('[data-studied-toggle]');
+      if (st) { const n = st.getAttribute('data-studied-toggle'); this.studied[n] = !this.studied[n]; this.saveProgress(); this.paintStudied(); return; }
+      if (e.target.closest('[data-reset-progress]')) { this.studied = {}; this.saveProgress(); this.paintStudied(); return; }
+      if (e.target.closest('[data-clear-search]')) { this.filter = 'all'; this.query = ''; const i = this.rootEl.querySelector('[data-search-input]'); if (i) i.value = ''; this.paintFilter(); return; }
+      const ol = e.target.closest('[data-open-lesson]');
+      if (ol) { this.openLesson(+ol.getAttribute('data-open-lesson')); return; }
+      if (e.target.closest('[data-modal-close]') || e.target.closest('[data-modal-close-bg]')) { this.closeModal(); return; }
+      const mt = e.target.closest('[data-modal-tab]');
+      if (mt) { this.setModalTab(mt.getAttribute('data-modal-tab')); return; }
+      const mcq = e.target.closest('[data-mcq-opt]');
+      if (mcq) { this.gradeMcq(+mcq.getAttribute('data-mcq-q'), +mcq.getAttribute('data-mcq-opt')); return; }
+      if (e.target.closest('[data-tutor-send]')) { this.sendTutor(); return; }
+      if (e.target.closest('[data-quiz-reset]')) { if (this.quiz) this.renderQuiz(this.quiz); return; }
+      if (e.target.closest('[data-tutor-clear]')) { const n = this.current; this.chats[n] = []; this.saveChat(n); this.renderTutorMessages(n); return; }
+      const rg = e.target.closest('[data-regen]');
+      if (rg) {
+        const which = rg.getAttribute('data-regen');
+        this.lsDel('ma2-ch-' + which + '-' + this.current);
+        if (which === 'summary') this.loadSummary(this.current);
+        else { this._quizLoadedFor = null; this.loadQuiz(this.current); }
+        return;
+      }
+    });
+    const inp = this.rootEl.querySelector('[data-search-input]');
+    if (inp) inp.addEventListener('input', (e) => { this.query = e.target.value.toLowerCase().trim(); this.paintFilter(); });
+  }
+
+  openLesson(n) {
+    this.current = n;
+    const card = this.rootEl.querySelector('[data-chapter="' + n + '"]');
+    const title = card.querySelector('h4').textContent.trim();
+    const page = card.querySelector('[data-page]').textContent.replace(/\s+/g, ' ').trim();
+    this.rootEl.querySelector('[data-modal-num]').textContent = n;
+    this.rootEl.querySelector('[data-modal-title]').textContent = title;
+    this.rootEl.querySelector('[data-modal-page]').textContent = 'Chapter ' + n + ' · ' + page;
+    if (!this.chats[n]) this.loadChat(n);
+    this._quizLoadedFor = null;
+    this.rootEl.querySelector('[data-modal]').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    this.setModalTab('summary');
+    this.loadSummary(n);
+  }
+
+  closeModal() {
+    const m = this.rootEl.querySelector('[data-modal]');
+    if (m) m.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  paintModalTabs() {
+    this.rootEl.querySelectorAll('[data-modal-tab]').forEach((b) => {
+      const active = b.getAttribute('data-modal-tab') === this.modalTab;
+      b.style.color = active ? '#16293f' : '#6b7480';
+      b.style.borderBottomColor = active ? 'var(--accent)' : 'transparent';
+    });
+  }
+  showPanel(tab) {
+    ['summary', 'quiz', 'tutor'].forEach((t) => {
+      const p = this.modalPanel(t);
+      if (!p) return;
+      p.style.display = (t === tab) ? (t === 'tutor' ? 'flex' : 'block') : 'none';
+    });
+  }
+  setModalTab(tab) {
+    this.modalTab = tab;
+    this.paintModalTabs();
+    this.showPanel(tab);
+    if (tab === 'quiz' && this._quizLoadedFor !== this.current) { this._quizLoadedFor = this.current; this.loadQuiz(this.current); }
+    if (tab === 'tutor') this.renderTutorShell(this.current);
+  }
+
+  async loadSummary(n) {
+    const panel = this.modalPanel('summary');
+    const key = 'ma2-ch-summary-' + n;
+    const cached = this.lsGet(key);
+    if (cached && cached.concepts) { panel.innerHTML = this.renderSummary(cached) + this.regenLink('summary'); return; }
+    if (!this.aiReady()) { panel.innerHTML = this.aiUnavailable(); return; }
+    panel.innerHTML = this.loadingBlock('Writing a summary for this chapter…');
+    try {
+      const c = this.ctx(n);
+      const prompt = 'You are a tutor for ACCA/FIA Management Accounting (MA2 - Managing Costs and Finances). For "Chapter ' + n + ': ' + c.title + '" covering: ' + c.topics.join('; ') + '. Respond with ONLY a JSON object (no code fences) with keys: "overview" (2 sentences), "concepts" (array of 5-6 short bullet strings), "formulas" (array of 0-4 formula strings, may be empty), "tips" (array of 2 short exam-tip strings). Be concise and accurate to MA2.';
+      const data = this.parseJson(await window.claude.complete(prompt));
+      if (n !== this.current) return;
+      if (!data || !data.concepts) throw new Error('bad');
+      this.lsSet(key, data);
+      panel.innerHTML = this.renderSummary(data) + this.regenLink('summary');
+    } catch (e) { panel.innerHTML = this.errorBlock('Could not generate the summary.', 'summary'); }
+  }
+
+  renderSummary(d) {
+    let h = '';
+    if (d.overview) h += '<p style="margin:0 0 4px;font-size:15.5px;line-height:1.65;color:#3a4550;">' + this.esc(d.overview) + '</p>';
+    const sect = (title, items) => {
+      if (!items || !items.length) return '';
+      let s = '<p style="margin:20px 0 9px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8a8678;">' + title + '</p><ul style="display:grid;gap:8px;">';
+      for (const it of items) s += '<li style="list-style:none;padding-left:18px;position:relative;font-size:14.5px;line-height:1.55;color:#3a4550;"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);"></span>' + this.esc(it) + '</li>';
+      return s + '</ul>';
+    };
+    h += sect('Key concepts', d.concepts);
+    if (d.formulas && d.formulas.length) {
+      h += '<div style="margin-top:20px;background:var(--accent-soft);border-left:4px solid var(--accent);border-radius:11px;padding:14px 18px;"><p style="margin:0 0 8px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-deep);">Key formulas</p>';
+      for (const f of d.formulas) h += '<p style="margin:0 0 6px;font-family:\'Schibsted Grotesk\';font-weight:600;font-size:15px;color:#16293f;line-height:1.4;">' + this.esc(f) + '</p>';
+      h += '</div>';
+    }
+    h += sect('Exam tips', d.tips);
+    return h;
+  }
+
+  async loadQuiz(n) {
+    const panel = this.modalPanel('quiz');
+    const key = 'ma2-ch-quiz-' + n;
+    const cached = this.lsGet(key);
+    if (cached && cached.length) { this.renderQuiz(cached); return; }
+    if (!this.aiReady()) { panel.innerHTML = this.aiUnavailable(); return; }
+    panel.innerHTML = this.loadingBlock('Building 10 practice questions…');
+    try {
+      const c = this.ctx(n);
+      const valid = (x) => x && x.q && Array.isArray(x.options) && x.options.length === 4 && typeof x.answer === 'number' && x.answer >= 0 && x.answer <= 3;
+      const mk = (count, extra) => 'Create ' + count + ' exam-style multiple-choice questions to test MA2 "Chapter ' + n + ': ' + c.title + '" (topics: ' + c.topics.join('; ') + '). ' + extra + ' Respond with ONLY a JSON array (no code fences) of ' + count + ' objects with keys: "q" (question), "options" (array of exactly 4 short strings), "answer" (integer 0-3, index of the correct option), "explanation" (one short sentence). Keep questions and options concise.';
+      const res = await Promise.all([
+        window.claude.complete(mk(5, 'Focus on core definitions and principles.')),
+        window.claude.complete(mk(5, 'Focus on application, calculations and trickier distinctions; make them different from basic definition questions.'))
+      ]);
+      if (n !== this.current) return;
+      let arr = [].concat(this.parseArr(res[0]) || [], this.parseArr(res[1]) || []).filter(valid);
+      // Top up to 10 if a call returned too few / unparseable JSON.
+      let tries = 0;
+      while (arr.length < 10 && tries < 2) {
+        tries++;
+        const need = 10 - arr.length;
+        const seen = arr.map((x) => x.q).join(' | ');
+        const fill = this.parseArr(await window.claude.complete(mk(need, 'These must be DIFFERENT from these existing questions: ' + seen)));
+        if (n !== this.current) return;
+        if (fill) arr = arr.concat(fill.filter(valid));
+      }
+      arr = arr.slice(0, 10);
+      if (!arr.length) throw new Error('empty');
+      this.lsSet(key, arr);
+      this.renderQuiz(arr);
+    } catch (e) { panel.innerHTML = this.errorBlock('Could not generate questions.', 'quiz'); }
+  }
+
+  renderQuiz(arr) {
+    this.quiz = arr; this.answered = {};
+    let h = '<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap;"><p style="margin:0;font-size:13.5px;color:#6b7480;">Pick an answer for instant feedback.</p><div style="display:flex;align-items:center;gap:13px;"><span data-quiz-score style="font-family:\'Schibsted Grotesk\';font-weight:700;font-size:15px;color:#16293f;">0 / ' + arr.length + '</span><button data-quiz-reset type="button" style="border:1px solid #d6d1c4;background:#fff;color:#16293f;font-family:\'Public Sans\';font-size:12.5px;font-weight:600;padding:6px 13px;border-radius:999px;cursor:pointer;">Reset practice</button></div></div>';
+    arr.forEach((q, qi) => {
+      h += '<div data-mcq-block="' + qi + '" style="border:1px solid #e4e0d6;background:#fff;border-radius:13px;padding:18px 20px;margin-bottom:14px;">';
+      h += '<p style="margin:0 0 13px;font-weight:600;font-size:15px;line-height:1.5;color:#16293f;">' + (qi + 1) + '. ' + this.esc(q.q) + '</p><div style="display:grid;gap:9px;">';
+      q.options.forEach((opt, oi) => {
+        h += '<button data-mcq-q="' + qi + '" data-mcq-opt="' + oi + '" type="button" style="display:flex;justify-content:space-between;gap:12px;align-items:center;text-align:left;width:100%;padding:12px 15px;border:1px solid #d6d1c4;border-radius:10px;background:#fff;color:#16293f;font-size:14px;font-weight:500;cursor:pointer;font-family:\'Public Sans\';transition:all .15s;"><span>' + this.esc(opt) + '</span><span data-mcq-mark style="font-weight:700;"></span></button>';
+      });
+      h += '</div><p data-mcq-expl style="display:none;margin:13px 0 0;padding:11px 14px;background:var(--accent-soft);border-radius:9px;font-size:13.5px;line-height:1.55;color:#5a4a2e;"></p></div>';
+    });
+    h += this.regenLink('quiz');
+    this.modalPanel('quiz').innerHTML = h;
+  }
+
+  gradeMcq(qi, oi) {
+    if (this.answered[qi] != null) return;
+    this.answered[qi] = oi;
+    const q = this.quiz[qi];
+    const block = this.rootEl.querySelector('[data-mcq-block="' + qi + '"]');
+    block.querySelectorAll('[data-mcq-opt]').forEach((btn, i) => {
+      const mark = btn.querySelector('[data-mcq-mark]');
+      if (i === q.answer) { btn.style.borderColor = '#1f7a55'; btn.style.background = '#e9f5ee'; btn.style.color = '#155c3f'; btn.style.fontWeight = '600'; if (mark) mark.textContent = '✓'; }
+      else if (i === oi) { btn.style.borderColor = '#c0504d'; btn.style.background = '#fbecec'; btn.style.color = '#8c2f2f'; if (mark) mark.textContent = '✕'; }
+      else { btn.style.background = '#faf9f5'; btn.style.color = '#8a8678'; btn.style.borderColor = '#ece9df'; }
+      btn.style.cursor = 'default';
+    });
+    const expl = block.querySelector('[data-mcq-expl]');
+    if (expl && q.explanation) { expl.textContent = q.explanation; expl.style.display = ''; }
+    let c = 0;
+    Object.keys(this.answered).forEach((k) => { if (this.answered[k] === this.quiz[k].answer) c++; });
+    const sc = this.rootEl.querySelector('[data-quiz-score]');
+    if (sc) sc.textContent = c + ' / ' + this.quiz.length;
+  }
+
+  renderTutorShell(n) {
+    const panel = this.modalPanel('tutor');
+    if (panel.getAttribute('data-built') !== '1') {
+      panel.setAttribute('data-built', '1');
+      panel.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 26px;border-bottom:1px solid #ece9df;background:#fff;"><span style="font-family:\'Schibsted Grotesk\';font-weight:700;font-size:13px;color:#16293f;">Chat with the AI tutor</span><button data-tutor-clear type="button" style="border:1px solid #d6d1c4;background:#fff;color:#6b7480;font-family:\'Public Sans\';font-size:12.5px;font-weight:600;padding:6px 13px;border-radius:999px;cursor:pointer;">Clear chat</button></div>' +
+        '<div data-tutor-scroll style="flex:1;overflow-y:auto;padding:22px 26px;display:flex;flex-direction:column;gap:13px;"></div>' +
+        '<div style="border-top:1px solid #e4e0d6;background:#fff;padding:13px 16px;display:flex;gap:10px;align-items:flex-end;">' +
+        '<textarea data-tutor-input rows="1" placeholder="Ask about this chapter…" style="flex:1;resize:none;max-height:130px;border:1px solid #d6d1c4;border-radius:12px;padding:11px 14px;font-family:\'Public Sans\';font-size:14px;line-height:1.4;color:#16293f;outline:none;"></textarea>' +
+        '<button data-tutor-send type="button" style="flex-shrink:0;border:none;background:#16293f;color:#f5f4ef;font-family:\'Schibsted Grotesk\';font-weight:700;font-size:14px;padding:11px 18px;border-radius:11px;cursor:pointer;">Send</button></div>';
+      const ta = panel.querySelector('[data-tutor-input]');
+      ta.addEventListener('keydown', (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); this.sendTutor(); } });
+      ta.addEventListener('input', () => { ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, 130) + 'px'; });
+    }
+    this.renderTutorMessages(n);
+  }
+
+  bubble(role, html, raw) {
+    const me = role === 'user';
+    return '<div style="display:flex;' + (me ? 'justify-content:flex-end;' : '') + '"><div style="max-width:84%;padding:11px 15px;border-radius:14px;' + (me ? 'background:#16293f;color:#f5f4ef;border-bottom-right-radius:5px;' : 'background:#fff;border:1px solid #e4e0d6;color:#3a4550;border-bottom-left-radius:5px;') + 'font-size:14px;line-height:1.55;">' + (raw ? html : (me ? this.esc(html) : this.fmt(html))) + '</div></div>';
+  }
+
+  renderTutorMessages(n) {
+    const panel = this.modalPanel('tutor');
+    const scroll = panel.querySelector('[data-tutor-scroll]');
+    if (!scroll) return;
+    const msgs = this.chats[n] || [];
+    if (!msgs.length && !this.tutorBusy) {
+      scroll.innerHTML = '<div style="margin:auto;text-align:center;max-width:360px;color:#8a8678;"><p style="font-family:\'Schibsted Grotesk\';font-weight:700;font-size:16px;color:#16293f;margin:0 0 8px;">Ask the AI tutor</p><p style="margin:0;font-size:14px;line-height:1.6;">Stuck on a concept from this chapter? Ask for an explanation, a worked example, or a quick recap.</p></div>';
+      return;
+    }
+    let h = '';
+    for (const m of msgs) h += this.bubble(m.role, m.text);
+    if (this.tutorBusy) h += this.bubble('assistant', '<span style="opacity:.6;">Thinking…</span>', true);
+    scroll.innerHTML = h;
+    scroll.scrollTop = scroll.scrollHeight;
+  }
+
+  async sendTutor() {
+    const n = this.current;
+    const panel = this.modalPanel('tutor');
+    const ta = panel.querySelector('[data-tutor-input]');
+    const text = (ta.value || '').trim();
+    if (!text || this.tutorBusy) return;
+    this.chats[n] = this.chats[n] || [];
+    this.chats[n].push({ role: 'user', text });
+    ta.value = ''; ta.style.height = 'auto';
+    this.saveChat(n);
+    if (!this.aiReady()) {
+      this.chats[n].push({ role: 'assistant', text: 'The AI tutor is available when viewing this page in the interactive preview.' });
+      this.renderTutorMessages(n); this.saveChat(n); return;
+    }
+    this.tutorBusy = true; this.renderTutorMessages(n);
+    try {
+      const c = this.ctx(n);
+      const sys = 'You are a friendly, concise tutor for ACCA/FIA Management Accounting (MA2 - Managing Costs and Finances), specifically "Chapter ' + n + ': ' + c.title + '" (topics: ' + c.topics.join('; ') + '). Explain clearly with short paragraphs and worked steps where useful. Keep answers under 180 words. If asked something unrelated, answer briefly then steer back to the chapter.';
+      const messages = [{ role: 'user', content: sys }, { role: 'assistant', content: 'Understood - I will help with this chapter. What would you like to know?' }];
+      for (const m of this.chats[n]) messages.push({ role: m.role, content: m.text });
+      const reply = await window.claude.complete({ messages });
+      this.chats[n].push({ role: 'assistant', text: reply || '(no response)' });
+    } catch (e) {
+      this.chats[n].push({ role: 'assistant', text: 'Sorry - I had trouble responding. Please try again.' });
+    }
+    this.tutorBusy = false; this.saveChat(n); this.renderTutorMessages(n);
+  }
+
+  loadProgress() { try { this.studied = JSON.parse(localStorage.getItem('ma2-study-progress-v1')) || {}; } catch (e) { this.studied = {}; } }
+  saveProgress() { try { localStorage.setItem('ma2-study-progress-v1', JSON.stringify(this.studied)); } catch (e) {} }
+
+  paintFilter() {
+    if (!this.rootEl) return;
+    let anyVisible = false;
+    this.rootEl.querySelectorAll('[data-chapter]').forEach((c) => {
+      const okPart = this.filter === 'all' || c.getAttribute('data-part') === this.filter;
+      const okQ = !this.query || c.getAttribute('data-search').indexOf(this.query) >= 0;
+      const vis = okPart && okQ;
+      c.style.display = vis ? '' : 'none';
+      if (vis) anyVisible = true;
+    });
+    this.rootEl.querySelectorAll('[data-partblock]').forEach((pb) => {
+      const has = Array.prototype.some.call(pb.querySelectorAll('[data-chapter]'), (c) => c.style.display !== 'none');
+      pb.style.display = has ? '' : 'none';
+    });
+    this.rootEl.querySelectorAll('[data-filter]').forEach((b) => {
+      const active = b.getAttribute('data-filter') === this.filter;
+      b.style.background = active ? '#16293f' : '#fff';
+      b.style.color = active ? '#f5f4ef' : '#16293f';
+      b.style.borderColor = active ? '#16293f' : '#d6d1c4';
+    });
+    const empty = this.rootEl.querySelector('[data-empty]');
+    if (empty) empty.style.display = anyVisible ? 'none' : '';
+  }
+
+  paintStudied() {
+    if (!this.rootEl) return;
+    let count = 0;
+    const toggles = this.rootEl.querySelectorAll('[data-studied-toggle]');
+    toggles.forEach((btn) => {
+      const n = btn.getAttribute('data-studied-toggle');
+      const on = !!this.studied[n];
+      if (on) count++;
+      const card = btn.closest('[data-chapter]');
+      const check = btn.querySelector('[data-check]');
+      const label = btn.querySelector('[data-studied-label]');
+      if (on) {
+        btn.style.background = 'var(--accent-soft)'; btn.style.borderColor = 'var(--accent)'; btn.style.color = 'var(--accent-deep)';
+        if (label) label.textContent = 'Studied';
+        if (check) { check.style.background = 'var(--accent)'; check.style.borderColor = 'var(--accent)'; check.textContent = '✓'; }
+        if (card) card.style.borderColor = 'var(--accent)';
+      } else {
+        btn.style.background = '#fff'; btn.style.borderColor = '#d6d1c4'; btn.style.color = '#6b7480';
+        if (label) label.textContent = 'Mark as studied';
+        if (check) { check.style.background = 'transparent'; check.style.borderColor = '#c2bdae'; check.textContent = ''; }
+        if (card) card.style.borderColor = '#e4e0d6';
+      }
+    });
+    const total = toggles.length;
+    const bar = this.rootEl.querySelector('[data-progress-bar]');
+    if (bar) bar.style.width = (total ? (count / total * 100) : 0) + '%';
+    const cnt = this.rootEl.querySelector('[data-progress-count]');
+    if (cnt) cnt.textContent = count + ' / ' + total + ' chapters';
+  }
+
+  applyTweaks() {
+    if (!this.rootEl) return;
+    this.rootEl.style.setProperty('--accent', this.props.accent || '#b08d4f');
+    const showPages = this.props.showPageNumbers !== false;
+    this.rootEl.querySelectorAll('[data-page]').forEach((el) => { el.style.display = showPages ? '' : 'none'; });
+    const showTopics = this.props.showTopics !== false;
+    this.rootEl.querySelectorAll('[data-topics]').forEach((el) => { el.style.display = showTopics ? '' : 'none'; });
+  }
+
+  paintNav() {
+    if (!this.rootEl) return;
+    this.rootEl.querySelectorAll('[data-nav]').forEach((a) => {
+      const active = a.getAttribute('data-nav') === this.state.activeSection;
+      a.style.color = active ? 'var(--accent-deep)' : '#3a4550';
+      a.style.background = active ? 'rgba(176,141,79,0.12)' : 'transparent';
+    });
+  }
+
+  renderVals() {
+    return { setRoot: (el) => { this.rootEl = el; } };
+  }
+}
+</script>
+</body>
+</html>
